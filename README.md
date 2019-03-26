@@ -16,20 +16,20 @@ Q9.   If the restaurant is full and a 6 people size is released,the system shoul
 Q10.  The system should ask a group of customer (more than 4) willing to be separate into different group or not and give out recommendation of available seats if they answer yes.  
 
 
-problem setting( reasonable assumptions):
+problem setting( reasonable assumptions):  
 
-Assume number of table is 20 and the table size is 4:
-A 2D image should be show like below:
-======================================
-口(4)   口(4)   口(4)   口(4)   口(4)(*table and table size) 
-1       2       3       4       5   (*number of table)
-口(4)   口(4)   口(4)   口(4)   口(4) 
-6       7       8       9      10
-口(4)   口(4)   口(4)   口(4)   口(4) 
-11      12      13     14      15
-口(4)   口(4)   口(4)   口(4)   口(4) 
-16      17      18     19      20
-======================================
+Assume number of table is 20 and the table size is 4:  
+A 2D image should be show like below:  
+======================================  
+口(4)   口(4)   口(4)   口(4)   口(4)(*table and table size)   
+1       2       3       4       5   (*number of table)  
+口(4)   口(4)   口(4)   口(4)   口(4)   
+6       7       8       9      10  
+口(4)   口(4)   口(4)   口(4)   口(4)   
+11      12      13     14      15  
+口(4)   口(4)   口(4)   口(4)   口(4)   
+16      17      18     19      20  
+======================================  
 Number of available seat:20
 Number of occupied seat:0
 ======================================

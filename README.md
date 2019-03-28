@@ -19,7 +19,7 @@ Q10.  The system should ask a group of customer (more than 4) willing to be sepa
 problem setting( reasonable assumptions):  
 
 Assume number of table is 20 and the table size is 4:  
-A 2D image should be show like below:  
+A 2D image should be shown like below:  
 ======================================  
 口(4)   口(4)   口(4)   口(4)   口(4)(*table and table size)
 1       2       3       4       5   (*number of table)

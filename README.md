@@ -18,9 +18,9 @@
 
 ### Problem setting (Reasonable assumptions):  
 
-> 07:00 - 11:30 - Number of table: 10 Table size: 4  
+> 07:00 - 11:30 - Number of table: 6 Table size: 4  
 > 11:30 - 14:20 - Number of table: 20 Table size: 5  
-> 14:20 - 18:00 - Number of table: 10 Table size: 4  
+> 14:20 - 18:00 - Number of table: 6 Table size: 4  
 > 18:00 - 21:30 - Number of table: 20 Table size: 5  
 
 Assume the number of table is 20 and the table size is 4:  

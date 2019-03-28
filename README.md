@@ -22,8 +22,8 @@ Assume the number of table is 20 and the table size is 4:
 A 2D image should be shown like below:  
 
 > First number indicates which number of table.  
-> Second number is table size.
-
+> Second number inducates table size.
+> Third number is the number of occupied seat.
 ---  
 > Program Start
 

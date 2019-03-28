@@ -20,7 +20,7 @@ problem setting( reasonable assumptions):
 
 Assume number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  
-#======================================  
+-------------------------------------  
 口(4)   口(4)   口(4)   口(4)   口(4)(*table and table size)
 1       2       3       4       5   (*number of table)
 口(4)   口(4)   口(4)   口(4)   口(4)
@@ -29,10 +29,10 @@ A 2D image should be shown like below:
 11      12      13     14      15
 口(4)   口(4)   口(4)   口(4)   口(4)
 16      17      18     19      20
-======================================  
+-------------------------------------  
 Number of available seat:20
 Number of occupied seat:0
-======================================
+-------------------------------------  
 Number of customer:_(eg.4)
 Recommendation of table:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20

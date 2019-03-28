@@ -54,6 +54,8 @@ Recommendation of table:
 
 ---
 
+> New Output
+
 Number of available table: 19  
 Number of full table: 1  
 Number of available seat: 76  
@@ -65,3 +67,7 @@ Table | Table | Table | Table | Table
 6 (4) [0] | 7 (4) [0] | 8 (4) [0] | 9 (4) [0] | 10 (4) [0]
 11 (4) [0] | 12 (4) [0] | 13 (4) [0] | 14 (4) [0] | 15 (4) [0]
 16 (4) [0] | 17 (4) [0] | 18 (4) [0] | 19 (4) [0] | 20 (4) [0]
+
+---
+
+> Until End

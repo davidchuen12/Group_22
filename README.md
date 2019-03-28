@@ -1,8 +1,8 @@
 # Group_22
 
-Topic: Table management system (Tingxiang)
+## Topic: Table management system (Tingxiang)
 
-problem statement(what problem to solve):
+### Problem statement (what problem to solve):
 
 - [*Q1] The system should be able to read an input of number of table and an input of table size.  
 - [*Q2] The system would be able to output the number of table available and the number of customers inside the restaurant.  
@@ -16,7 +16,7 @@ problem statement(what problem to solve):
 - [Q10] The system should ask a group of customer (more than 4) willing to be separate into different group or not and give out recommendation of available seats if they answer yes.  
 
 
-problem setting( reasonable assumptions):  
+### Problem setting (reasonable assumptions):  
 
 Assume number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  

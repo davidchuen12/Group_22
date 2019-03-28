@@ -22,6 +22,8 @@ Assume the number of table is 20 and the table size is 4:
 A 2D image should be shown like below:  
 
 -------------------------------------  
+> First number indicates which number of table.
+> Second number is table size.
 Table | Table | Table | Table | Table
 ------------ | ------------- | ------------- | ------------- | -------------
 1(4) | 2(4) | 3(4) | 4(4) | 5(4)
@@ -29,8 +31,8 @@ Table | Table | Table | Table | Table
 11(4) | 12(4) | 13(4) | 14(4) | 15(4)
 16(4) | 17(4) | 18(4) | 19(4) | 20(4)
 -------------------------------------  
-Number of available seat:20
-Number of occupied seat:0
+Number of available seat: 20
+Number of occupied seat: 0
 -------------------------------------  
 Number of customer:_(eg.4)
 Recommendation of table:

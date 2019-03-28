@@ -18,7 +18,7 @@
 
 ### Problem setting (reasonable assumptions):  
 
-Assume number of table is 20 and the table size is 4:  
+Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  
 
 -------------------------------------  

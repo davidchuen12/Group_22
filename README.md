@@ -20,11 +20,9 @@
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  
-
----  
 > First number indicates which number of table.  
 > Second number is table size.
-
+---  
 Number of available seat: 20  
 Number of occupied seat: 0  
 

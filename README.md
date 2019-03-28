@@ -16,7 +16,7 @@
 - [Q10] The system should ask a group of customer (more than 4) willing to be separate into different group or not and give out recommendation of available seats if they answer yes.  
 
 
-### Problem setting (reasonable assumptions):  
+### Problem setting (Reasonable assumptions):  
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  

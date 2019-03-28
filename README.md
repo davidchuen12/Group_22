@@ -28,15 +28,15 @@ A 2D image should be shown like below:
 > Program Start
 
 Number of available table: 20  
+Number of full table: 0  
 Number of available seat: 80  
-Number of full table: 0
 Number of occupied seat: 0  
 
 > Show 2D image
 
 Table | Table | Table | Table | Table
 ------------ | ------------- | ------------- | ------------- | -------------
-1 (4) | 2 (4) | 3 (4) | 4 (4) | 5 (4)
+1 (4 [0]) | 2 (4) | 3 (4) | 4 (4) | 5 (4)
 6 (4) | 7 (4) | 8 (4) | 9 (4) | 10 (4)
 11 (4) | 12 (4) | 13 (4) | 14 (4) | 15 (4)
 16 (4) | 17 (4) | 18 (4) | 19 (4) | 20 (4)
@@ -55,13 +55,13 @@ Recommendation of table:
 ---
 
 Number of available table: 19  
-Number of available seat: 76  
 Number of full table: 1  
+Number of available seat: 76  
 Number of occupied seat: 4  
 
 Table | Table | Table | Table | Table
 ------------ | ------------- | ------------- | ------------- | -------------
-1 (0) | 2 (4) | 3 (4) | 4 (4) | 5 (4)
+1 (4) | 2 (4) | 3 (4) | 4 (4) | 5 (4)
 6 (4) | 7 (4) | 8 (4) | 9 (4) | 10 (4)
 11 (4) | 12 (4) | 13 (4) | 14 (4) | 15 (4)
 16 (4) | 17 (4) | 18 (4) | 19 (4) | 20 (4)

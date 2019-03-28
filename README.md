@@ -20,7 +20,7 @@ problem setting( reasonable assumptions):
 
 Assume number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  
- | | | | |
+
 -------------------------------------  
 口(4)|口(4)|口(4)|口(4)|口(4)(*table and table size)  
 1|2|3|4|5   (*number of table)  
@@ -38,3 +38,9 @@ Number of customer:_(eg.4)
 Recommendation of table:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 
+
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column

@@ -24,6 +24,7 @@ A 2D image should be shown like below:
 -------------------------------------  
 > First number indicates which number of table.
 > Second number is table size.
+
 Table | Table | Table | Table | Table
 ------------ | ------------- | ------------- | ------------- | -------------
 1(4) | 2(4) | 3(4) | 4(4) | 5(4)

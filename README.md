@@ -56,7 +56,7 @@ Recommendation of table:
 
 Number of available table: 19  
 Number of available seat: 76  
-Number of full table: 1
+Number of full table: 1  
 Number of occupied seat: 4  
 
 Table | Table | Table | Table | Table

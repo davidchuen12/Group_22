@@ -25,6 +25,7 @@ A 2D image should be shown like below:
 > Second number is table size.
 
 ---  
+> Program Start
 
 Number of available seat: 20  
 Number of occupied seat: 0  

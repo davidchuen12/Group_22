@@ -42,4 +42,4 @@ Recommendation of table:
 
 First Header | Second Header | Second Header | Second Header | Second Header
 ------------ | ------------- | ------------- | ------------- | -------------
-1 | 2 | 3 | 4 | 5
+1  口 | 2  口 | 3  口 | 4  口 | 5  口

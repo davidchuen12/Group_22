@@ -34,7 +34,7 @@ Table | Table | Table | Table | Table
 -------------------------------------  
 Number of available seat: 20
 Number of occupied seat: 0
--------------------------------------  
+//-------------------------------------  
 Number of customer:_(eg.4)
 Recommendation of table:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20

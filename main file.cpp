@@ -6,7 +6,7 @@
 using namespace std;
 
 const int MAX_VALUE = 100;
-int Table_Occupied[MAX_VALUE], Table_Available[MAX_VALUE];
+int Table_Occupied[MAX_VALUE], Table_Available[MAX_VALUE], table_size = 5, num_of_table = 20;
 
 void show_table() {
 	cout << endl;
@@ -15,7 +15,7 @@ void show_table() {
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << endl;
 	cout << " +------------+------------+------------+------------+----------- +" << endl;
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < num_of_table; i++) {
 		if ((i + 1) % 5 == 0) {
 			cout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "] |";
 			cout << endl;
@@ -32,12 +32,12 @@ void Q1()
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
-		Table_Available[i] = 4;
+		Table_Available[i] = table_size;
 		Table_Occupied[i] = 0;
 	}
 
 	while (move != 'E') {
-		int table_num, customer = 0, all_available_table = 20, full_table = 0, all_available_seat = 0;
+		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0;
 
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];
@@ -48,7 +48,7 @@ void Q1()
 		cout << "Number of available table: " << all_available_table - full_table << endl;
 		cout << "Number of full table: " << full_table << endl;
 		cout << "Number of available seat: " << all_available_seat << endl;
-		cout << "Number of occupied seat: " << 20 * 4 - all_available_seat << endl;
+		cout << "Number of occupied seat: " << num_of_table * table_size - all_available_seat << endl;
 		show_table();
 
 		//cout << "Recommendation(s) of table:" << endl;
@@ -65,7 +65,7 @@ void Q1()
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
 			cin >> customer;
-			for (int i = 0; i < 20; i++) {
+			for (int i = 0; i < num_of_table; i++) {
 				if (customer <= Table_Available[i]) {
 					Table_Available[i] -= customer;
 					Table_Occupied[i] += customer;
@@ -114,7 +114,33 @@ void Q1()
 
 void Q2()
 {
-	
+	int prog_choice;
+	do {
+		cout << endl;
+		cout << "What time is it?" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "(1) 07:00 - 11:30 - Number of table: 10 Table size: 4" << endl;
+		cout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
+		cout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
+		cout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
+		cout << "(5) Exit" << endl;
+		cout << "Enter the choice: ";
+		cin >> prog_choice;
+
+		switch (prog_choice) {
+		case 1: table_size = 4, num_of_table = 10;
+			break;
+		case 2: table_size = 5, num_of_table = 20;
+			break;
+		case 3: table_size = 4, num_of_table = 10;
+			break;
+		case 4:  table_size = 5, num_of_table = 20;
+			break;
+		default:
+			cout << "Please enter choice 1 - 5 only." << endl;
+			break;
+		}
+	} while (prog_choice != 5);
 }
 
 void Q3()

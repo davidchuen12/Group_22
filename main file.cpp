@@ -74,6 +74,14 @@ int main() {
 						customer -= 1;
 					}
 				}
+				else if (YorN == 'N') {
+					cout << "Wait" << endl;
+					if (customer <= Table_Available[i]) {
+						Table_Available[i] -= customer;
+						Table_Occupied[i] += customer;
+						customer -= customer;
+					}
+				}
 			}
 			else if (Table_Available[i] == 0) {
 				continue;

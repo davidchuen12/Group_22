@@ -11,7 +11,7 @@ int Table_Occupied[MAX_VALUE], Table_Available[MAX_VALUE];
 void show_table() {
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
-	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20)<< right << "[Occupied seat] *" << endl;
+	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << endl;
 	cout << " +------------+------------+------------+------------+----------- +" << endl;
@@ -27,7 +27,8 @@ void show_table() {
 	}
 }
 
-int main() {
+void Q1()
+{
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
@@ -58,7 +59,7 @@ int main() {
 		}*/
 
 		cout << endl;
-		
+
 		cout << "What action? (I/O) ";
 		cin >> move;
 		if (move == 'I') {
@@ -91,7 +92,7 @@ int main() {
 				}
 				else if (Table_Available[i] == 0)
 					continue;
-			}	
+			}
 		}
 		else if (move == 'O') {
 			cout << "Which table? ";
@@ -106,8 +107,48 @@ int main() {
 			Table_Available[table_num - 1] += customer;
 			Table_Occupied[table_num - 1] -= customer;
 		}
-	cout << "===========================================================================" << endl;
-	cout << endl;
+		cout << "===========================================================================" << endl;
+		cout << endl;
 	}
+}
+
+void Q2()
+{
+	
+}
+
+void Q3()
+{
+	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
+	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
+}
+
+int main()
+{
+	int prog_choice;
+
+	do {
+		cout << endl;
+		cout << "XYZ Restaurant -- Table management system" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "(1) Starts" << endl;
+		cout << "(2) Setting" << endl;
+		cout << "(3) Authors" << endl;
+		cout << "(4) Exit" << endl;
+		cout << "Enter the choice: ";
+		cin >> prog_choice;
+
+		switch (prog_choice) {
+		case 1: Q1(); break;
+		case 2: Q2(); break;
+		case 3: Q3(); break;
+		case 4: break;
+		default:
+			cout << "Please enter choice 1 - 4 only." << endl;
+			break;
+		}
+	} while (prog_choice != 4);
+
+	cout << "Program terminates. Good bye!" << endl;
 	return 0;
 }

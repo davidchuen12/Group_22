@@ -6,7 +6,9 @@
 using namespace std;
 
 const int MAX_VALUE = 100;
-int Table_Occupied[MAX_VALUE], Table_Available[MAX_VALUE], table_size = 5, num_of_table = 20;
+int *Table_Occupied = new int [MAX_VALUE];
+int *Table_Available = new int[MAX_VALUE];
+int table_size = 5, num_of_table = 20;
 
 void show_table() {
 	cout << endl;
@@ -27,8 +29,7 @@ void show_table() {
 	}
 }
 
-void Q1()
-{
+void start_func() {
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
@@ -75,10 +76,15 @@ void Q1()
 					cout << "Separate into different tables? (Y/N) ";
 					cin >> YorN;
 					if (YorN == 'Y') {
-						while (Table_Available[i] > 0) {
-							Table_Available[i] -= 1;
-							Table_Occupied[i] += 1;
-							customer -= 1;
+						for (int j = 0; j < num_of_table; j++) {
+							while (Table_Available[j] > 0) {
+								Table_Available[j] -= 1;
+								Table_Occupied[j] += 1;
+								customer -= 1;
+							}
+						}
+						if (customer != 0) {
+							cout << "Sorry, you have to wait" << endl;
 						}
 					}
 					else if (YorN == 'N') {
@@ -112,8 +118,7 @@ void Q1()
 	}
 }
 
-void Q2()
-{
+void setting_func() {
 	int prog_choice;
 	do {
 		cout << endl;
@@ -143,10 +148,9 @@ void Q2()
 	} while (prog_choice != 5);
 }
 
-void Q3()
-{
+void Authors_func() {
 	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
-	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
+	cout << "Name: Ho Sui Ting  UID: " << endl;
 }
 
 int main()
@@ -165,9 +169,9 @@ int main()
 		cin >> prog_choice;
 
 		switch (prog_choice) {
-		case 1: Q1(); break;
-		case 2: Q2(); break;
-		case 3: Q3(); break;
+		case 1: start_func(); break;
+		case 2: setting_func(); break;
+		case 3: Authors_func(); break;
 		case 4: break;
 		default:
 			cout << "Please enter choice 1 - 4 only." << endl;
@@ -176,5 +180,6 @@ int main()
 	} while (prog_choice != 4);
 
 	cout << "Program terminates. Good bye!" << endl;
+	delete Table_Occupied, Table_Available;
 	return 0;
 }

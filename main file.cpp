@@ -41,20 +41,20 @@ int main() {
 			}
 		}
 
-		cout << "Number of available table: " << all_available_table << endl;
+		cout << "Number of available table: " << 20 << endl;
 		cout << "Number of full table: " << full_table << endl;
-		cout << "Number of available seat: " << 80 << endl;
+		cout << "Number of available seat: " << all_available_table << endl;
 		cout << "Number of occupied seat: " << 0 << endl;
 		show_table();
 		cout << "Number of customer(s): ";
 		cin >> customer;
-		cout << "Recommendation(s) of table:" << endl;
+		//cout << "Recommendation(s) of table:" << endl;
 
-		for (int i = 0; i < 20; i++) {
+		/*for (int i = 0; i < 20; i++) {
 			if (customer <= Table_Available[i]) {
 				cout << (i + 1) << " ";
 			}
-		}
+		}*/
 
 		cout << endl;
 
@@ -63,6 +63,20 @@ int main() {
 				Table_Available[i] -= customer;
 				Table_Occupied[i] += customer;
 				break;
+			}
+			else if (customer > Table_Available[i] && Table_Available[i] != 0) {
+				cout << "Separate into different tables? (Y/N)";
+				cin >> YorN;
+				if (YorN == 'Y') {
+					while (Table_Available[i] > 0) {
+						Table_Available[i] -= 1;
+						Table_Occupied[i] += 1;
+						customer -= 1;
+					}
+				}
+			}
+			else if (Table_Available[i] == 0) {
+				continue;
 			}
 		}
 

@@ -25,6 +25,7 @@ void show_table() {
 int main() {
 	int customer = 0, all_available_table = 20, full_table = 0;
 	char YorN;
+
 	for (int i = 0; i < MAX_VALUE; i++) {
 		Table_Available[i] = 4;
 		Table_Occupied[i] = 0;
@@ -39,6 +40,7 @@ int main() {
 				full_table += 1;
 			}
 		}
+
 		cout << "Number of available table: " << all_available_table << endl;
 		cout << "Number of full table: " << full_table << endl;
 		cout << "Number of available seat: " << 80 << endl;
@@ -47,12 +49,15 @@ int main() {
 		cout << "Number of customer(s): ";
 		cin >> customer;
 		cout << "Recommendation(s) of table:" << endl;
+
 		for (int i = 0; i < 20; i++) {
 			if (customer <= Table_Available[i]) {
 				cout << (i + 1) << " ";
 			}
 		}
+
 		cout << endl;
+
 		for (int i = 0; i < 20; i++) {
 			if (customer <= Table_Available[i]) {
 				Table_Available[i] -= customer;
@@ -60,6 +65,9 @@ int main() {
 				break;
 			}
 		}
-		show_table();
+
+		cout << "//////////////////////////////////////////////////////////////////////////" << endl;
+		cout << endl;
 	}
+	return 0;
 }

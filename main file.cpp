@@ -98,7 +98,7 @@ int main() {
 			cin >> table_num;
 			cout << "How many customer(s) out? ";
 			cin >> customer;
-			while (customer > Table_Occupied[table_num]) {
+			while (customer > Table_Occupied[table_num - 1]) {
 				cout << "Error! Enter again. ";
 				cout << "How many customer(s) out? ";
 				cin >> customer;

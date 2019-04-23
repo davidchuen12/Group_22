@@ -65,40 +65,41 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 	cin >> move;
 
 	if (move == 'I') {
-		cout << " ********* All tables in the restaurant are occupied *********" << endl;
-		cout << "You have to share the table with others!" << endl;
-		cout << "Number of customer(s): ";
-		cout << customer;
-		//cin >> customer;
-		cout << endl;
-
-		if (all_available_seat < customer) {
+		if (all_available_seat == 0) {
+			cout << "********* The restaurant is now full *********" << endl;
+		}
+		else if(all_available_seat > customer){
+			cout << " ********* All tables in the restaurant are occupied *********" << endl;
+			cout << "You have to share the table with others!" << endl;
+			cout << "Number of customer(s): ";
+			cout << customer;
+			//cin >> customer;
+			cout << endl;
+			for (int i = 0; i < num_of_table; i++) {
+				if (customer <= Table_Available[i]) {
+					Table_Available[i] -= customer;
+					Table_Occupied[i] += customer;
+					cout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
+					break;
+				}
+				else if (customer > Table_Available[i] && Table_Available[i] != 0) {
+					int temp = customer;
+					while (Table_Available[i] > 0) {
+						Table_Available[i] -= 1;
+						Table_Occupied[i] += 1;
+						customer -= 1;
+					}
+					cout << temp - customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
+				}
+				else if (Table_Available[i] == 0) {
+					continue;
+				}
+			}
+		}
+		else if (all_available_seat < customer) {
 			cout << "We don't have enoguh seats.";
 			return;
 		}
-
-		for (int i = 0; i < num_of_table; i++) {
-			if (customer <= Table_Available[i]) {
-				Table_Available[i] -= customer;
-				Table_Occupied[i] += customer;
-				cout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
-				break;
-			}
-			else if (customer > Table_Available[i] && Table_Available[i] != 0) {
-				int temp = customer;
-				while (Table_Available[i] > 0) {
-					Table_Available[i] -= 1;
-					Table_Occupied[i] += 1;
-					customer -= 1;
-				}
-				cout << temp - customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
-
-			}
-			else if (Table_Available[i] == 0) {
-				continue;
-			}
-		}
-		cout << "You have to share the table with others!" << endl;
 		count_customer++;
 	}
 
@@ -208,17 +209,17 @@ void start_func() {
 			}
 		}
 		else if (move == 'O') {
-		cout << "Which table? ";
-		cin >> table_num;
-		cout << "How many customer(s) out? ";
-		cin >> customer;
-		while (customer > Table_Occupied[table_num - 1]) {
-			cout << "Error! Enter again. ";
+			cout << "Which table? ";
+			cin >> table_num;
 			cout << "How many customer(s) out? ";
 			cin >> customer;
-		}
-		Table_Available[table_num - 1] += customer;
-		Table_Occupied[table_num - 1] -= customer;
+			while (customer > Table_Occupied[table_num - 1]) {
+				cout << "Error! Enter again. ";
+				cout << "How many customer(s) out? ";
+				cin >> customer;
+			}
+			Table_Available[table_num - 1] += customer;
+			Table_Occupied[table_num - 1] -= customer;
 		}
 		cout << "===========================================================================" << endl;
 		cout << endl;

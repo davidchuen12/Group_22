@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include <ctime>
-//#include <stdlib.h>:
+#include <stdlib.h>
 using namespace std;
 
 const int MAX_VALUE = 100;
@@ -34,6 +34,8 @@ void show_table() {
 }
 
 void Waiting_lists(int &count_customer) {
+	cout << endl;
+	cout << "Waiting List: " << endl;
 	for (int i = count_customer; i < MAX_VALUE; i++) {
 		if ((i + 1) % 10 == 0) {
 			cout << setw(2) << right << Waiting_list[i] << endl;
@@ -42,11 +44,18 @@ void Waiting_lists(int &count_customer) {
 			cout << setw(2) << right << Waiting_list[i] << " ";
 		}
 	}
+	cout << endl;
 }
 
-void auto_assign_table(char move, int customer, int &count_customer) {
+void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;
 	show_table();
+
+	cout << "Number of available table: " << all_available_table - full_table << endl;
+	cout << "Number of full table: " << full_table << endl;
+	cout << "Number of available seat: " << all_available_seat << endl;
+	cout << "Number of occupied seat: " << num_of_table * table_size - all_available_seat << endl;
+
 	cout << endl;
 	cout << "  * Input E to exit   " << endl;
 	cout << "  * Input I to occupy a table   " << endl;
@@ -54,6 +63,7 @@ void auto_assign_table(char move, int customer, int &count_customer) {
 	cout << endl;
 	cout << "What action? (I/O) ";
 	cin >> move;
+
 	if (move == 'I') {
 		cout << " ********* All tables in the restaurant are occupied *********" << endl;
 		cout << "You have to share the table with others!" << endl;
@@ -61,6 +71,12 @@ void auto_assign_table(char move, int customer, int &count_customer) {
 		cout << customer;
 		//cin >> customer;
 		cout << endl;
+
+		if (all_available_seat < customer) {
+			cout << "We don't have enoguh seats.";
+			return;
+		}
+
 		for (int i = 0; i < num_of_table; i++) {
 			if (customer <= Table_Available[i]) {
 				Table_Available[i] -= customer;
@@ -85,6 +101,7 @@ void auto_assign_table(char move, int customer, int &count_customer) {
 		cout << "You have to share the table with others!" << endl;
 		count_customer++;
 	}
+
 	else if (move == 'O') {
 		cout << "Which table? ";
 		cin >> table_num;
@@ -97,6 +114,13 @@ void auto_assign_table(char move, int customer, int &count_customer) {
 		}
 		Table_Available[table_num - 1] += customer;
 		Table_Occupied[table_num - 1] -= customer;
+	}
+
+	for (int i = 0; i < all_available_table; i++) {
+		all_available_seat += Table_Available[i];
+		if (Table_Available[i] == 0) {
+			full_table += 1;
+		}
 	}
 }
 
@@ -122,11 +146,6 @@ void start_func() {
 		customer = Waiting_list[count_customer];
 		Waiting_list[count_customer] = NULL;
 
-		if (total == num_of_table && move != 'O') {
-			auto_assign_table(move, customer, count_customer);    // Assign the table if all tables are occupied
-			continue;
-		}
-
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];
 			if (Table_Available[i] == 0) {
@@ -134,18 +153,16 @@ void start_func() {
 			}
 		}
 
+		if (total == num_of_table && move != 'O') {
+			auto_assign_table(move, customer, count_customer, all_available_table, full_table, all_available_seat);    // Assign the table if all tables are occupied
+			continue;
+		}
+
 		cout << "Number of available table: " << all_available_table - full_table << endl;
 		cout << "Number of full table: " << full_table << endl;
 		cout << "Number of available seat: " << all_available_seat << endl;
 		cout << "Number of occupied seat: " << num_of_table * table_size - all_available_seat << endl;
 		show_table();
-
-		//cout << "Recommendation(s) of table:" << endl;
-		/*for (int i = 0; i < 20; i++) {
-			if (customer <= Table_Available[i]) {
-				cout << (i + 1) << " ";
-			}
-		}*/
 
 		cout << endl;
 
@@ -206,7 +223,7 @@ void start_func() {
 		cout << "===========================================================================" << endl;
 		cout << endl;
 		count_customer++;
-		//system("cls");
+		system("cls");
 		cout << "Waiting List: " << endl;
 		Waiting_lists(count_customer);
 		cout << endl;

@@ -31,7 +31,7 @@ void show_table() {
 	}
 }
 
-/*this function read user input and process different tasks*/
+/*this function read user input and process different tasks,like ocuppying a table ,releasing a table*/
 void start_func() {
 	char YorN, move = ' ';
 

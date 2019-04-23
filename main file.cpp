@@ -12,7 +12,7 @@ int *Order_list2 = new int[MAX_VALUE];
 int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
 int *Waiting_list = new int[MAX_VALUE];
-int table_size = 5, num_of_table = 20,z=0,x=0;
+int table_size = 5, num_of_table = 20, z = 0, x = 0;
 
 // This function shows a 2D picture of our restaurant which included the number of the table, 
 // the available seat of a table and the seat occupied for that table
@@ -35,7 +35,7 @@ void show_table() {
 	}
 }
 
-/*void Waiting_lists(int &count_customer) {
+void Waiting_lists(int &count_customer) {
 	cout << endl;
 	cout << "Waiting List: " << endl;
 	for (int i = count_customer; i < MAX_VALUE; i++) {
@@ -47,7 +47,7 @@ void show_table() {
 		}
 	}
 	cout << endl;
-}*/
+}
 
 void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;
@@ -78,8 +78,10 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			cout << " ********* All tables in the restaurant are occupied *********" << endl;
 			cout << "You have to share the table with others!" << endl;
 			cout << "Number of customer(s): ";
-			//cout << customer;
-			cin >> customer;
+			// *******************************************************;
+			cout << customer << endl;
+			// cin >> customer;
+			// *******************************************************;
 			for (int i = 0; i < num_of_table; i++) {
 				if (customer <= Table_Available[i]) {
 					Table_Available[i] -= customer;
@@ -201,8 +203,10 @@ void start_func() {
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
-			cin >> customer;
-			//cout << customer << endl;
+			// *******************************************************;
+			// cin >> customer;
+			cout << customer << endl;
+			// *******************************************************;
 			if (all_available_seat < customer) {
 				cout << "We don't have enoguh seats." << endl;
 				cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !"<<endl;
@@ -266,7 +270,10 @@ void start_func() {
 		count_customer++;
 		system("cls");
 		//cout << "Waiting List: " << endl;
-		//Waiting_lists(count_customer);
+		
+		// ***************************************************;
+		Waiting_lists(count_customer);
+		// ***************************************************;
 		cout << endl;
 	}
 }
@@ -332,8 +339,20 @@ void Staffs_func() {
 
 int main()
 {
-	int prog_choice;
-
+	int prog_choice, num;
+	ifstream fin;
+	fin.open("random_array.txt");
+	if (fin.fail()) {
+		cout << "Error! random_array.txt";
+		exit(1);
+	}
+	
+	for (int i = 0; i < MAX_VALUE; i++) {
+		fin >> num;
+		waiting_list[i] = num;
+	}
+	fin.close();
+	
 	/*for (int i = 0; i < MAX_VALUE; i++) {
 		Waiting_list[i] = (rand() % 6) + 1;
 	}*/
@@ -361,6 +380,6 @@ int main()
 	} while (prog_choice != 4);
 
 	cout << "Program terminates. Good bye!" << endl;
-	delete Table_Occupied, Table_Available, Waiting_list;
+	delete Table_Occupied, Table_Available, Waiting_list, Order_list1, Order_list2;
 	return 0;
 }

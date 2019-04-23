@@ -44,6 +44,8 @@ void auto_assign_table() {
 	cout << "What action? (I/O) ";
 	cin >> move;
 	if (move == 'I') {
+		cout << " ********* All tables in the restaurant are occupied *********" << endl;
+		cout << "You have to share the table with others!" << endl;
 		cout << "Number of customer(s): ";
 		cin >> customer;
 		cout << endl;
@@ -51,21 +53,23 @@ void auto_assign_table() {
 			if (customer <= Table_Available[i]) {
 				Table_Available[i] -= customer;
 				Table_Occupied[i] += customer;
+				cout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 				break;
 			}
 			else if (customer > Table_Available[i] && Table_Available[i] != 0) {
+				int temp = customer;
 				while (Table_Available[i] > 0) {
 					Table_Available[i] -= 1;
 					Table_Occupied[i] += 1;
 					customer -= 1;
 				}
+				cout << temp-customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 
 			}
 			else if (Table_Available[i] == 0) {
 				continue;
 			}
 		}
-		cout << "You have to share the table with others!" << endl;
 	}
 }
 
@@ -137,6 +141,7 @@ void start_func() {
 				}
 				else {
 					if (Table_Available[table_num - 1] >= customer) {
+						cout << customer << " Customer(s) have been assigned to Table " << table_num << endl;
 						Table_Available[table_num - 1] -= customer;
 						Table_Occupied[table_num - 1] += customer;
 						customer -= customer;
@@ -145,8 +150,9 @@ void start_func() {
 						Table_Available[table_num - 1] -= table_size;
 						Table_Occupied[table_num - 1] += table_size;
 						customer -= table_size;
+						cout << table_size << " Customer(s) have been assigned to Table " << table_num << endl;
 						show_table();
-						cout << "You have to asign tables for " << customer << " more customers" << endl;
+						cout << "You have to assign tables for " << customer << " more customers" << endl;
 					}
 				}
 			}
@@ -242,7 +248,7 @@ int main()
 		cout << endl;
 		cout << "XYZ Restaurant -- Table management system" << endl;
 		cout << "------------------------------------------" << endl;
-		cout << "(1) Starts" << endl;
+		cout << "(1) Start" << endl;
 		cout << "(2) Setting" << endl;
 		cout << "(3) Staffs" << endl;
 		cout << "(4) Exit" << endl;

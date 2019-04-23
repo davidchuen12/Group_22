@@ -70,6 +70,7 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 		if (all_available_seat == 0) {
 			cout << "********* The restaurant is now full *********" << endl;
 			cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !"<<endl;
+			cout << endl;
 			x++;
 			move = 'O';
 		}
@@ -79,7 +80,6 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			cout << "Number of customer(s): ";
 			//cout << customer;
 			cin >> customer;
-			cout << endl;
 			for (int i = 0; i < num_of_table; i++) {
 				if (customer <= Table_Available[i]) {
 					Table_Available[i] -= customer;
@@ -106,6 +106,7 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 				else if (all_available_seat < customer) {
 					cout << "We don't have enoguh seats."<<endl;
 					cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !";
+					cout << endl;
 					x++;
 					move = 'O';
 					return;
@@ -119,6 +120,7 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 		else if (all_available_seat < customer) {
 			cout << "We don't have enoguh seats."<<endl;
 			cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !";
+			cout << endl;
 			x++;
 			move = 'O';
 			return;
@@ -201,44 +203,52 @@ void start_func() {
 			cout << "Number of customer(s): ";
 			cin >> customer;
 			//cout << customer << endl;
-			while (customer != 0) {
-				cout << "Tables you can choose: ";
-				for (int i = 0; i < num_of_table; i++) {
-					if (Table_Occupied[i] == 0) {
-						cout << i + 1 << " ";
+			if (all_available_seat < customer) {
+				cout << "We don't have enoguh seats." << endl;
+				cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !"<<endl;
+				x++;
+				move = 'O';
+			}
+			else if (all_available_seat >= customer) {
+				while (customer != 0) {
+					cout << "Tables you can choose: ";
+					for (int i = 0; i < num_of_table; i++) {
+						if (Table_Occupied[i] == 0) {
+							cout << i + 1 << " ";
+						}
 					}
-				}
-				cout << endl;
-				cout << "Table(s) you would like to occupy: ";
-				cin >> table_num;
-				if (Table_Occupied[table_num - 1] != 0) {
-					cout << " Table is occupied already " << endl;
-					cout << " Please try again" << endl;
-					break;
-				}
-				else {
-					if (Table_Available[table_num - 1] >= customer) {
-						Order_list1[z] = table_num;
-						Order_list2[z] = customer;
-						z++;
-						Table_Available[table_num - 1] -= customer;
-						Table_Occupied[table_num - 1] += customer;
-						customer -= customer;
+					cout << endl;
+					cout << "Table(s) you would like to occupy: ";
+					cin >> table_num;
+					if (Table_Occupied[table_num - 1] != 0) {
+						cout << " Table is occupied already " << endl;
+						cout << " Please try again" << endl;
+						break;
 					}
-					if (Table_Available[table_num - 1] < customer) {
-						Order_list1[z] = table_num;
-						Order_list2[z] = table_size;
-						z++;
-						Table_Available[table_num - 1] -= table_size;
-						Table_Occupied[table_num - 1] += table_size;
-						customer -= table_size;
-						show_table();
-						cout << "You have to assign tables for " << customer << " more customers" << endl;
+					else {
+						if (Table_Available[table_num - 1] >= customer) {
+							Order_list1[z] = table_num;
+							Order_list2[z] = customer;
+							z++;
+							Table_Available[table_num - 1] -= customer;
+							Table_Occupied[table_num - 1] += customer;
+							customer -= customer;
+						}
+						if (Table_Available[table_num - 1] < customer) {
+							Order_list1[z] = table_num;
+							Order_list2[z] = table_size;
+							z++;
+							Table_Available[table_num - 1] -= table_size;
+							Table_Occupied[table_num - 1] += table_size;
+							customer -= table_size;
+							show_table();
+							cout << "You have to assign tables for " << customer << " more customers" << endl;
+						}
 					}
 				}
 			}
 		}
-		else if (move == 'O') {
+		 if (move == 'O') {
 			cout << "Which table need to be released? ";
 			cin >> table_num;
 			cout << "How many customer(s) out? ";

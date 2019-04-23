@@ -68,7 +68,7 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 		if (all_available_seat == 0) {
 			cout << "********* The restaurant is now full *********" << endl;
 		}
-		else if(all_available_seat > customer){
+		else if (all_available_seat >= customer) {
 			cout << " ********* All tables in the restaurant are occupied *********" << endl;
 			cout << "You have to share the table with others!" << endl;
 			cout << "Number of customer(s): ";
@@ -138,6 +138,7 @@ void start_func() {
 
 	while (move != 'E') {
 		int table_num, /*customer = 0, */all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
+
 		for (int i = 0; i < num_of_table; i++) {
 			if (Table_Occupied[i] > 0) {
 				total += 1;
@@ -145,7 +146,7 @@ void start_func() {
 		}
 
 		customer = Waiting_list[count_customer];
-		Waiting_list[count_customer] = NULL;
+		//Waiting_list[count_customer] = NULL;
 
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];

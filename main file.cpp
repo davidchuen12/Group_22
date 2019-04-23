@@ -6,11 +6,11 @@
 using namespace std;
 
 const int MAX_VALUE = 100;
-int *Table_Occupied = new int [MAX_VALUE];
+int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
 int table_size = 5, num_of_table = 20;
 
-void show_table() {
+void show_table() {    //this function shows a 2D picture of our restaurant which included the number of the table,the available seat of a table and the seat occupied for that table
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
@@ -28,7 +28,6 @@ void show_table() {
 		}
 	}
 }
-
 void start_func() {
 	char YorN, move = ' ';
 
@@ -38,8 +37,16 @@ void start_func() {
 	}
 
 	while (move != 'E') {
-		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0;
-
+		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0,total=0;
+		for (int i = 0;i < num_of_table;i++) {
+			if (Table_Occupied[i] > 0) {
+				total += 1;
+			}
+		}
+		/*if (total = num_of_table) {
+			//autoassigntable();    //asign the table if all tables are occupied
+			//continue;  //*****************************************************************Eorror may occur
+		}*/
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];
 			if (Table_Available[i] == 0) {
@@ -61,43 +68,37 @@ void start_func() {
 
 		cout << endl;
 
+		cout << "  * Input E to exit   " << endl;
+		cout << "  * Input I to occupy a table   " << endl;
+		cout << "  * Input O to release a table   " << endl;
+		cout << endl;
 		cout << "What action? (I/O) ";
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
 			cin >> customer;
-			for (int i = 0; i < num_of_table; i++) {
-				if (customer <= Table_Available[i]) {
-					Table_Available[i] -= customer;
-					Table_Occupied[i] += customer;
+			while (customer != 0) {
+				cout << "Table(s) you would like to occupy: ";
+				cin >> table_num;
+				if (Table_Occupied[table_num - 1] != 0) {
+					cout << " Table is occupied already " << endl;
+					cout << " Please try again"<<endl;
 					break;
 				}
-				else if (customer > Table_Available[i] && Table_Available[i] != 0) {
-					cout << "Separate into different tables? (Y/N) ";
-					cin >> YorN;
-					if (YorN == 'Y') {
-						for (int j = 0; j < num_of_table; j++) {
-							while (Table_Available[j] > 0) {
-								Table_Available[j] -= 1;
-								Table_Occupied[j] += 1;
-								customer -= 1;
-							}
-						}
-						if (customer != 0) {
-							cout << "Sorry, you have to wait" << endl;
-						}
+				else{
+					if (Table_Available[table_num - 1] >= customer) {
+						Table_Available[table_num - 1] -= customer;
+						Table_Occupied[table_num - 1] += customer;
+						customer -= customer;
 					}
-					else if (YorN == 'N') {
-						cout << "Wait" << endl;
-						if (customer <= Table_Available[i]) {
-							Table_Available[i] -= customer;
-							Table_Occupied[i] += customer;
-							customer -= customer;
-						}
+					if (Table_Available[table_num - 1] < customer) {
+						Table_Available[table_num - 1] -= 5;
+						Table_Occupied[table_num - 1] += 5;
+						customer -= 5;
+						show_table();
+						cout << "You have to separate tables for " << customer << " more customers" << endl;
 					}
 				}
-				else if (Table_Available[i] == 0)
-					continue;
 			}
 		}
 		else if (move == 'O') {
@@ -117,6 +118,7 @@ void start_func() {
 		cout << endl;
 	}
 }
+
 
 void setting_func() {
 	int prog_choice;
@@ -148,9 +150,9 @@ void setting_func() {
 	} while (prog_choice != 5);
 }
 
-void Authors_func() {
+void Staffs_func() {
 	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
-	cout << "Name: Ho Sui Ting  UID: " << endl;
+	cout << "Name: Ho Sui Ting  UID: 3035569330" << endl;
 }
 
 int main()
@@ -163,7 +165,7 @@ int main()
 		cout << "------------------------------------------" << endl;
 		cout << "(1) Starts" << endl;
 		cout << "(2) Setting" << endl;
-		cout << "(3) Authors" << endl;
+		cout << "(3) Staffs" << endl;
 		cout << "(4) Exit" << endl;
 		cout << "Enter the choice: ";
 		cin >> prog_choice;
@@ -171,7 +173,7 @@ int main()
 		switch (prog_choice) {
 		case 1: start_func(); break;
 		case 2: setting_func(); break;
-		case 3: Authors_func(); break;
+		case 3: Staffs_func(); break;
 		case 4: break;
 		default:
 			cout << "Please enter choice 1 - 4 only." << endl;

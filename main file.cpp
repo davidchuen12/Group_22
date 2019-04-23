@@ -123,7 +123,7 @@ void start_func() {
 	}
 }
 
-
+/*this function allow the user to modify the setting accoriding to the seasonal change*/
 void setting_func() {
 	int prog_choice;
 	do {

@@ -7,10 +7,12 @@
 using namespace std;
 
 const int MAX_VALUE = 100;
+int *Order_list1 = new int[MAX_VALUE];
+int *Order_list2 = new int[MAX_VALUE];
 int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
 int *Waiting_list = new int[MAX_VALUE];
-int table_size = 5, num_of_table = 20;
+int table_size = 5, num_of_table = 20,z=0,x=0;
 
 // This function shows a 2D picture of our restaurant which included the number of the table, 
 // the available seat of a table and the seat occupied for that table
@@ -67,6 +69,9 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 	if (move == 'I') {
 		if (all_available_seat == 0) {
 			cout << "********* The restaurant is now full *********" << endl;
+			cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !"<<endl;
+			x++;
+			move = 'O';
 		}
 		else if (all_available_seat >= customer) {
 			cout << " ********* All tables in the restaurant are occupied *********" << endl;
@@ -80,6 +85,9 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 					Table_Available[i] -= customer;
 					Table_Occupied[i] += customer;
 					cout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
+					Order_list1[z] = i+1;
+					Order_list2[z] = customer;
+					z++;
 					break;
 				}
 				else if (customer > Table_Available[i] && Table_Available[i] != 0) {
@@ -90,10 +98,16 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 						customer -= 1;
 					}
 					cout << temp - customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
+					Order_list1[z] = i + 1;
+					Order_list2[z] = temp-customer;
+					z++;
 				}
 
 				else if (all_available_seat < customer) {
-					cout << "We don't have enoguh seats.";
+					cout << "We don't have enoguh seats."<<endl;
+					cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !";
+					x++;
+					move = 'O';
 					return;
 				}
 
@@ -103,14 +117,17 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			}
 		}
 		else if (all_available_seat < customer) {
-			cout << "We don't have enoguh seats.";
+			cout << "We don't have enoguh seats."<<endl;
+			cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !";
+			x++;
+			move = 'O';
 			return;
 		}
 		count_customer++;
 	}
 
-	else if (move == 'O') {
-		cout << "Which table? ";
+	if (move == 'O') {
+		cout << "Which table need to be released? ";
 		cin >> table_num;
 		cout << "How many customer(s) out? ";
 		cin >> customer;
@@ -201,11 +218,17 @@ void start_func() {
 				}
 				else {
 					if (Table_Available[table_num - 1] >= customer) {
+						Order_list1[z] = table_num;
+						Order_list2[z] = customer;
+						z++;
 						Table_Available[table_num - 1] -= customer;
 						Table_Occupied[table_num - 1] += customer;
 						customer -= customer;
 					}
 					if (Table_Available[table_num - 1] < customer) {
+						Order_list1[z] = table_num;
+						Order_list2[z] = table_size;
+						z++;
 						Table_Available[table_num - 1] -= table_size;
 						Table_Occupied[table_num - 1] += table_size;
 						customer -= table_size;
@@ -216,7 +239,7 @@ void start_func() {
 			}
 		}
 		else if (move == 'O') {
-			cout << "Which table? ";
+			cout << "Which table need to be released? ";
 			cin >> table_num;
 			cout << "How many customer(s) out? ";
 			cin >> customer;

@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <ctime>
+//#include <stdlib.h>:
 using namespace std;
 
 const int MAX_VALUE = 100;
@@ -32,9 +33,19 @@ void show_table() {
 	}
 }
 
-void auto_assign_table() {
-	int customer;
-	char YorN, move;
+void Waiting_lists(int &count_customer) {
+	for (int i = count_customer; i < MAX_VALUE; i++) {
+		if ((i + 1) % 10 == 0) {
+			cout << setw(2) << right << Waiting_list[i] << endl;
+		}
+		else {
+			cout << setw(2) << right << Waiting_list[i] << " ";
+		}
+	}
+}
+
+void auto_assign_table(char move, int customer, int &count_customer) {
+	int table_num;
 	show_table();
 	cout << endl;
 	cout << "  * Input E to exit   " << endl;
@@ -47,7 +58,8 @@ void auto_assign_table() {
 		cout << " ********* All tables in the restaurant are occupied *********" << endl;
 		cout << "You have to share the table with others!" << endl;
 		cout << "Number of customer(s): ";
-		cin >> customer;
+		cout << customer;
+		//cin >> customer;
 		cout << endl;
 		for (int i = 0; i < num_of_table; i++) {
 			if (customer <= Table_Available[i]) {
@@ -63,34 +75,55 @@ void auto_assign_table() {
 					Table_Occupied[i] += 1;
 					customer -= 1;
 				}
-				cout << temp-customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
+				cout << temp - customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 
 			}
 			else if (Table_Available[i] == 0) {
 				continue;
 			}
 		}
+		cout << "You have to share the table with others!" << endl;
+		count_customer++;
+	}
+	else if (move == 'O') {
+		cout << "Which table? ";
+		cin >> table_num;
+		cout << "How many customer(s) out? ";
+		cin >> customer;
+		while (customer > Table_Occupied[table_num - 1]) {
+			cout << "Error! Enter again. ";
+			cout << "How many customer(s) out? ";
+			cin >> customer;
+		}
+		Table_Available[table_num - 1] += customer;
+		Table_Occupied[table_num - 1] -= customer;
 	}
 }
 
 void start_func() {
+	int customer = 0, count_customer = 0;
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
 		Table_Available[i] = table_size;
-		Table_Occupied[i] = 0;
+		Table_Occupied[i] = 0; // Original = 0;
 	}
 
+	Waiting_lists(count_customer);
+
 	while (move != 'E') {
-		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
+		int table_num, /*customer = 0, */all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
 		for (int i = 0; i < num_of_table; i++) {
 			if (Table_Occupied[i] > 0) {
 				total += 1;
 			}
 		}
 
-		if (total == num_of_table) {
-			auto_assign_table();    // Assign the table if all tables are occupied
+		customer = Waiting_list[count_customer];
+		Waiting_list[count_customer] = NULL;
+
+		if (total == num_of_table && move != 'O') {
+			auto_assign_table(move, customer, count_customer);    // Assign the table if all tables are occupied
 			continue;
 		}
 
@@ -100,6 +133,7 @@ void start_func() {
 				full_table += 1;
 			}
 		}
+
 		cout << "Number of available table: " << all_available_table - full_table << endl;
 		cout << "Number of full table: " << full_table << endl;
 		cout << "Number of available seat: " << all_available_seat << endl;
@@ -123,12 +157,13 @@ void start_func() {
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
-			cin >> customer;
+			//cin >> customer;
+			cout << customer << endl;
 			while (customer != 0) {
 				cout << "Tables you can choose: ";
 				for (int i = 0; i < num_of_table; i++) {
 					if (Table_Occupied[i] == 0) {
-						cout << i+1 << " ";
+						cout << i + 1 << " ";
 					}
 				}
 				cout << endl;
@@ -141,7 +176,6 @@ void start_func() {
 				}
 				else {
 					if (Table_Available[table_num - 1] >= customer) {
-						cout << customer << " Customer(s) have been assigned to Table " << table_num << endl;
 						Table_Available[table_num - 1] -= customer;
 						Table_Occupied[table_num - 1] += customer;
 						customer -= customer;
@@ -150,7 +184,6 @@ void start_func() {
 						Table_Available[table_num - 1] -= table_size;
 						Table_Occupied[table_num - 1] += table_size;
 						customer -= table_size;
-						cout << table_size << " Customer(s) have been assigned to Table " << table_num << endl;
 						show_table();
 						cout << "You have to assign tables for " << customer << " more customers" << endl;
 					}
@@ -158,19 +191,24 @@ void start_func() {
 			}
 		}
 		else if (move == 'O') {
-			cout << "Which table? ";
-			cin >> table_num;
+		cout << "Which table? ";
+		cin >> table_num;
+		cout << "How many customer(s) out? ";
+		cin >> customer;
+		while (customer > Table_Occupied[table_num - 1]) {
+			cout << "Error! Enter again. ";
 			cout << "How many customer(s) out? ";
 			cin >> customer;
-			while (customer > Table_Occupied[table_num - 1]) {
-				cout << "Error! Enter again. ";
-				cout << "How many customer(s) out? ";
-				cin >> customer;
-			}
-			Table_Available[table_num - 1] += customer;
-			Table_Occupied[table_num - 1] -= customer;
+		}
+		Table_Available[table_num - 1] += customer;
+		Table_Occupied[table_num - 1] -= customer;
 		}
 		cout << "===========================================================================" << endl;
+		cout << endl;
+		count_customer++;
+		//system("cls");
+		cout << "Waiting List: " << endl;
+		Waiting_lists(count_customer);
 		cout << endl;
 	}
 }
@@ -182,12 +220,12 @@ void setting_func() {
 		cout << endl;
 		cout << "What time is it?" << endl;
 		cout << "------------------------------------------" << endl;
-		cout << "                      Summer Time"<<endl;
+		cout << "                      Summer Time" << endl;
 		cout << "(1) 07:00 - 11:30 - Number of table: 10 Table size: 4" << endl;
 		cout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
 		cout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
 		cout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
-		cout << "                      Winter Time"<<endl;
+		cout << "                      Winter Time" << endl;
 		cout << "(5) 07:00 - 11:30 - Number of table: 15 Table size: 5" << endl;
 		cout << "(6) 12:00 - 14:30 - Number of table: 20 Table size: 6" << endl;
 		cout << "(7) 15:00 - 18:00 - Number of table: 15 Table size: 5" << endl;
@@ -227,22 +265,20 @@ void setting_func() {
 			break;
 		}
 	} while (prog_choice != 9);
-	cout << "The setting has been changed successfully" << endl;
 }
 
 void Staffs_func() {
-	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
-	cout << "Name: Ho Sui Ting  UID: 3035569330" << endl;
+	cout << "Name: Chan Kam Chuen\tUID: 3035558197" << endl;
+	cout << "Name: Ho Sui Ting\tUID: 3035569330" << endl;
 }
 
 int main()
 {
 	int prog_choice;
 
-	/*for (int i = 0; i < MAX_VALUE; i++) {
+	for (int i = 0; i < MAX_VALUE; i++) {
 		Waiting_list[i] = (rand() % 10) + 1;
-		// cout << Waiting_list[i] << " ";
-	}*/
+	}
 
 	do {
 		cout << endl;
@@ -267,6 +303,6 @@ int main()
 	} while (prog_choice != 4);
 
 	cout << "Program terminates. Good bye!" << endl;
-	delete Table_Occupied, Table_Available;
+	delete Table_Occupied, Table_Available, Waiting_list;
 	return 0;
 }

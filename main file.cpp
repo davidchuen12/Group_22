@@ -10,7 +10,9 @@ int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
 int table_size = 5, num_of_table = 20;
 
-void show_table() {    //this function shows a 2D picture of our restaurant which included the number of the table,the available seat of a table and the seat occupied for that table
+/*this function shows a 2D picture of our restaurant which included the number of the table,
+the available seat of a table and the seat occupied for that table*/
+void show_table() {    
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
@@ -28,6 +30,8 @@ void show_table() {    //this function shows a 2D picture of our restaurant whic
 		}
 	}
 }
+
+/*this function read user input and process different tasks*/
 void start_func() {
 	char YorN, move = ' ';
 

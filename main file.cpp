@@ -91,6 +91,12 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 					}
 					cout << temp - customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 				}
+
+				else if (all_available_seat < customer) {
+					cout << "We don't have enoguh seats.";
+					return;
+				}
+
 				else if (Table_Available[i] == 0) {
 					continue;
 				}

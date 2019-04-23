@@ -146,7 +146,7 @@ void start_func() {
 		}
 
 		customer = Waiting_list[count_customer];
-		//Waiting_list[count_customer] = NULL;
+		// Waiting_list[count_customer] = NULL;
 
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];

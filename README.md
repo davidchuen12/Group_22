@@ -4,7 +4,7 @@
 
 ### Problem statement (what problem to solve):
 
-- [*Q1] The system should be able to read an input of number of table and an input of table size.  
+- [*Q1] The system should be able to modify the number of table and the table size.  
 - [*Q2] The system would be able to output the number of table available and the number of customers inside the restaurant.  
 - [*Q3] The system should be able to output a 2D plan image to show which of the table is occupied or available.  
 - [*Q4] The system would be able read an input of 'release' and 'occupied' and make a new 2D plan image to show which of the table is occupied or available immediately.  

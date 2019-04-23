@@ -33,7 +33,7 @@ void show_table() {
 	}
 }
 
-void Waiting_lists(int &count_customer) {
+/*void Waiting_lists(int &count_customer) {
 	cout << endl;
 	cout << "Waiting List: " << endl;
 	for (int i = count_customer; i < MAX_VALUE; i++) {
@@ -45,7 +45,7 @@ void Waiting_lists(int &count_customer) {
 		}
 	}
 	cout << endl;
-}
+}*/
 
 void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;
@@ -72,8 +72,8 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			cout << " ********* All tables in the restaurant are occupied *********" << endl;
 			cout << "You have to share the table with others!" << endl;
 			cout << "Number of customer(s): ";
-			cout << customer;
-			//cin >> customer;
+			//cout << customer;
+			cin >> customer;
 			cout << endl;
 			for (int i = 0; i < num_of_table; i++) {
 				if (customer <= Table_Available[i]) {
@@ -134,7 +134,7 @@ void start_func() {
 		Table_Occupied[i] = 0; // Original = 0;
 	}
 
-	Waiting_lists(count_customer);
+	//Waiting_lists(count_customer);
 
 	while (move != 'E') {
 		int table_num, /*customer = 0, */all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
@@ -176,8 +176,8 @@ void start_func() {
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
-			//cin >> customer;
-			cout << customer << endl;
+			cin >> customer;
+			//cout << customer << endl;
 			while (customer != 0) {
 				cout << "Tables you can choose: ";
 				for (int i = 0; i < num_of_table; i++) {
@@ -226,8 +226,8 @@ void start_func() {
 		cout << endl;
 		count_customer++;
 		system("cls");
-		cout << "Waiting List: " << endl;
-		Waiting_lists(count_customer);
+		//cout << "Waiting List: " << endl;
+		//Waiting_lists(count_customer);
 		cout << endl;
 	}
 }
@@ -295,9 +295,9 @@ int main()
 {
 	int prog_choice;
 
-	for (int i = 0; i < MAX_VALUE; i++) {
+	/*for (int i = 0; i < MAX_VALUE; i++) {
 		Waiting_list[i] = (rand() % 6) + 1;
-	}
+	}*/
 
 	do {
 		cout << endl;

@@ -8,9 +8,12 @@ using namespace std;
 const int MAX_VALUE = 100;
 int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
+int *Waiting_list = new int[MAX_VALUE];
 int table_size = 5, num_of_table = 20;
 
-void show_table() {    //this function shows a 2D picture of our restaurant which included the number of the table,the available seat of a table and the seat occupied for that table
+// This function shows a 2D picture of our restaurant which included the number of the table, 
+// the available seat of a table and the seat occupied for that table
+void show_table() {    
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
@@ -28,6 +31,44 @@ void show_table() {    //this function shows a 2D picture of our restaurant whic
 		}
 	}
 }
+
+void auto_assign_table() {
+	int customer;
+	char YorN, move;
+	show_table();
+	cout << endl;
+	cout << "  * Input E to exit   " << endl;
+	cout << "  * Input I to occupy a table   " << endl;
+	cout << "  * Input O to release a table   " << endl;
+	cout << endl;
+	cout << "What action? (I/O) ";
+	cin >> move;
+	if (move == 'I') {
+		cout << "Number of customer(s): ";
+		cin >> customer;
+		cout << endl;
+		for (int i = 0; i < num_of_table; i++) {
+			if (customer <= Table_Available[i]) {
+				Table_Available[i] -= customer;
+				Table_Occupied[i] += customer;
+				break;
+			}
+			else if (customer > Table_Available[i] && Table_Available[i] != 0) {
+				while (Table_Available[i] > 0) {
+					Table_Available[i] -= 1;
+					Table_Occupied[i] += 1;
+					customer -= 1;
+					}
+				
+			}
+			else if (Table_Available[i] == 0) {
+				continue;
+			}
+		}
+		cout << "You have to share the table with others!" << endl;
+	}
+}
+
 void start_func() {
 	char YorN, move = ' ';
 
@@ -37,16 +78,18 @@ void start_func() {
 	}
 
 	while (move != 'E') {
-		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0,total=0;
-		for (int i = 0;i < num_of_table;i++) {
+		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
+		for (int i = 0; i < num_of_table; i++) {
 			if (Table_Occupied[i] > 0) {
 				total += 1;
 			}
 		}
-		/*if (total = num_of_table) {
-			//autoassigntable();    //asign the table if all tables are occupied
-			//continue;  //*****************************************************************Eorror may occur
-		}*/
+
+		if (total == num_of_table) {
+			auto_assign_table();    // Assign the table if all tables are occupied
+			continue;
+		}
+
 		for (int i = 0; i < all_available_table; i++) {
 			all_available_seat += Table_Available[i];
 			if (Table_Available[i] == 0) {
@@ -82,21 +125,21 @@ void start_func() {
 				cin >> table_num;
 				if (Table_Occupied[table_num - 1] != 0) {
 					cout << " Table is occupied already " << endl;
-					cout << " Please try again"<<endl;
+					cout << " Please try again" << endl;
 					break;
 				}
-				else{
+				else {
 					if (Table_Available[table_num - 1] >= customer) {
 						Table_Available[table_num - 1] -= customer;
 						Table_Occupied[table_num - 1] += customer;
 						customer -= customer;
 					}
 					if (Table_Available[table_num - 1] < customer) {
-						Table_Available[table_num - 1] -= table_size;
-						Table_Occupied[table_num - 1] += table_size;
-						customer -= table_size;
+						Table_Available[table_num - 1] -= 5;
+						Table_Occupied[table_num - 1] += 5;
+						customer -= 5;
 						show_table();
-						cout << "You have to asign table(s) for " << customer << " more customers" << endl;
+						cout << "You have to separate tables for " << customer << " more customers" << endl;
 					}
 				}
 			}
@@ -158,6 +201,11 @@ void Staffs_func() {
 int main()
 {
 	int prog_choice;
+
+	/*for (int i = 0; i < MAX_VALUE; i++) {
+		Waiting_list[i] = (rand() % 10) + 1;
+		// cout << Waiting_list[i] << " ";
+	}*/
 
 	do {
 		cout << endl;

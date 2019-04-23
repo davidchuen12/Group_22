@@ -277,7 +277,7 @@ int main()
 	int prog_choice;
 
 	for (int i = 0; i < MAX_VALUE; i++) {
-		Waiting_list[i] = (rand() % 10) + 1;
+		Waiting_list[i] = (rand() % 6) + 1;
 	}
 
 	do {

@@ -32,9 +32,7 @@ void show_table() {
 	}
 }
 
-void auto_assign_table() {
-	int customer;
-	char YorN, move;
+void auto_assign_table(char move, int customer) {
 	show_table();
 	cout << endl;
 	cout << "  * Input E to exit   " << endl;
@@ -70,6 +68,7 @@ void auto_assign_table() {
 }
 
 void start_func() {
+	int customer = 0, count_customer = 0;
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
@@ -78,15 +77,18 @@ void start_func() {
 	}
 
 	while (move != 'E') {
-		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
+		int table_num, /*customer = 0, */all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
 		for (int i = 0; i < num_of_table; i++) {
 			if (Table_Occupied[i] > 0) {
 				total += 1;
 			}
 		}
 
+		customer = Waiting_list[count_customer];
+		Waiting_list[count_customer] = NULL;
+
 		if (total == num_of_table) {
-			auto_assign_table();    // Assign the table if all tables are occupied
+			auto_assign_table(move, customer);    // Assign the table if all tables are occupied
 			continue;
 		}
 
@@ -119,12 +121,13 @@ void start_func() {
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
-			cin >> customer;
+			//cin >> customer;
+			cout << customer << endl;
 			while (customer != 0) {
 				cout << "Tables you can choose: ";
 				for (int i = 0; i < num_of_table; i++) {
 					if (Table_Occupied[i] == 0) {
-						cout << i+1 << " ";
+						cout << i + 1 << " ";
 					}
 				}
 				cout << endl;
@@ -166,6 +169,7 @@ void start_func() {
 		}
 		cout << "===========================================================================" << endl;
 		cout << endl;
+		count_customer++;
 	}
 }
 
@@ -201,18 +205,18 @@ void setting_func() {
 }
 
 void Staffs_func() {
-	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
-	cout << "Name: Ho Sui Ting  UID: 3035569330" << endl;
+	cout << "Name: Chan Kam Chuen\tUID: 3035558197" << endl;
+	cout << "Name: Ho Sui Ting\tUID: 3035569330" << endl;
 }
 
 int main()
 {
 	int prog_choice;
 
-	/*for (int i = 0; i < MAX_VALUE; i++) {
+	for (int i = 0; i < MAX_VALUE; i++) {
 		Waiting_list[i] = (rand() % 10) + 1;
-		// cout << Waiting_list[i] << " ";
-	}*/
+		cout << Waiting_list[i] << " ";
+	}
 
 	do {
 		cout << endl;

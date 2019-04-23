@@ -13,7 +13,7 @@ int table_size = 5, num_of_table = 20;
 
 // This function shows a 2D picture of our restaurant which included the number of the table, 
 // the available seat of a table and the seat occupied for that table
-void show_table() {    
+void show_table() {
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
@@ -58,8 +58,8 @@ void auto_assign_table() {
 					Table_Available[i] -= 1;
 					Table_Occupied[i] += 1;
 					customer -= 1;
-					}
-				
+				}
+
 			}
 			else if (Table_Available[i] == 0) {
 				continue;
@@ -121,6 +121,13 @@ void start_func() {
 			cout << "Number of customer(s): ";
 			cin >> customer;
 			while (customer != 0) {
+				cout << "Tables you can choose: ";
+				for (int i = 0; i < num_of_table; i++) {
+					if (Table_Occupied[i] == 0) {
+						cout << i+1 << " ";
+					}
+				}
+				cout << endl;
 				cout << "Table(s) you would like to occupy: ";
 				cin >> table_num;
 				if (Table_Occupied[table_num - 1] != 0) {

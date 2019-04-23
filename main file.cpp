@@ -10,9 +10,7 @@ int *Table_Occupied = new int[MAX_VALUE];
 int *Table_Available = new int[MAX_VALUE];
 int table_size = 5, num_of_table = 20;
 
-/*this function shows a 2D picture of our restaurant which included the number of the table,
-the available seat of a table and the seat occupied for that table*/
-void show_table() {    
+void show_table() {    //this function shows a 2D picture of our restaurant which included the number of the table,the available seat of a table and the seat occupied for that table
 	cout << endl;
 	cout << setw(50) << right << "***********************************************" << endl;
 	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
@@ -30,8 +28,6 @@ void show_table() {
 		}
 	}
 }
-
-/*this function read user input and process different tasks,like ocuppying a table ,releasing a table*/
 void start_func() {
 	char YorN, move = ' ';
 
@@ -96,11 +92,11 @@ void start_func() {
 						customer -= customer;
 					}
 					if (Table_Available[table_num - 1] < customer) {
-						Table_Available[table_num - 1] -= 5;
-						Table_Occupied[table_num - 1] += 5;
-						customer -= 5;
+						Table_Available[table_num - 1] -= table_size;
+						Table_Occupied[table_num - 1] += table_size;
+						customer -= table_size;
 						show_table();
-						cout << "You have to separate tables for " << customer << " more customers" << endl;
+						cout << "You have to asign table(s) for " << customer << " more customers" << endl;
 					}
 				}
 			}
@@ -123,7 +119,7 @@ void start_func() {
 	}
 }
 
-/*this function allow the user to modify the setting accoriding to the seasonal change*/
+
 void setting_func() {
 	int prog_choice;
 	do {

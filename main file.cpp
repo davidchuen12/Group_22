@@ -135,11 +135,11 @@ void start_func() {
 						customer -= customer;
 					}
 					if (Table_Available[table_num - 1] < customer) {
-						Table_Available[table_num - 1] -= 5;
-						Table_Occupied[table_num - 1] += 5;
-						customer -= 5;
+						Table_Available[table_num - 1] -= table_size;
+						Table_Occupied[table_num - 1] += table_size;
+						customer -= table_size;
 						show_table();
-						cout << "You have to separate tables for " << customer << " more customers" << endl;
+						cout << "You have to asign tables for " << customer << " more customers" << endl;
 					}
 				}
 			}

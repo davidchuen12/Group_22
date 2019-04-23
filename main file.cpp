@@ -193,35 +193,27 @@ void setting_func() {
 
 		switch (prog_choice) {
 		case 1: table_size = 4, num_of_table = 10;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 2: table_size = 5, num_of_table = 20;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 3: table_size = 4, num_of_table = 10;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 4:  table_size = 5, num_of_table = 20;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 5: table_size = 5, num_of_table = 15;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 6: table_size = 6, num_of_table = 20;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 7: table_size = 5, num_of_table = 15;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		case 8: table_size = 6, num_of_table = 25;
-			cout << "The setting has been changed successfully" << endl;
 			prog_choice = 9;
 			break;
 		default:
@@ -229,6 +221,7 @@ void setting_func() {
 			break;
 		}
 	} while (prog_choice != 9);
+	cout << "The setting has been changed successfully" << endl;
 }
 
 void Staffs_func() {

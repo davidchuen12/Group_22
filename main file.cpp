@@ -32,7 +32,9 @@ void show_table() {
 	}
 }
 
-void auto_assign_table(char move, int customer) {
+void auto_assign_table() {
+	int customer;
+	char YorN, move;
 	show_table();
 	cout << endl;
 	cout << "  * Input E to exit   " << endl;
@@ -68,7 +70,6 @@ void auto_assign_table(char move, int customer) {
 }
 
 void start_func() {
-	int customer = 0, count_customer = 0;
 	char YorN, move = ' ';
 
 	for (int i = 0; i < MAX_VALUE; i++) {
@@ -77,18 +78,15 @@ void start_func() {
 	}
 
 	while (move != 'E') {
-		int table_num, /*customer = 0, */all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
+		int table_num, customer = 0, all_available_table = num_of_table, full_table = 0, all_available_seat = 0, total = 0;
 		for (int i = 0; i < num_of_table; i++) {
 			if (Table_Occupied[i] > 0) {
 				total += 1;
 			}
 		}
 
-		customer = Waiting_list[count_customer];
-		Waiting_list[count_customer] = NULL;
-
 		if (total == num_of_table) {
-			auto_assign_table(move, customer);    // Assign the table if all tables are occupied
+			auto_assign_table();    // Assign the table if all tables are occupied
 			continue;
 		}
 
@@ -121,13 +119,12 @@ void start_func() {
 		cin >> move;
 		if (move == 'I') {
 			cout << "Number of customer(s): ";
-			//cin >> customer;
-			cout << customer << endl;
+			cin >> customer;
 			while (customer != 0) {
 				cout << "Tables you can choose: ";
 				for (int i = 0; i < num_of_table; i++) {
 					if (Table_Occupied[i] == 0) {
-						cout << i + 1 << " ";
+						cout << i+1 << " ";
 					}
 				}
 				cout << endl;
@@ -169,7 +166,6 @@ void start_func() {
 		}
 		cout << "===========================================================================" << endl;
 		cout << endl;
-		count_customer++;
 	}
 }
 
@@ -180,43 +176,74 @@ void setting_func() {
 		cout << endl;
 		cout << "What time is it?" << endl;
 		cout << "------------------------------------------" << endl;
+		cout << "                      Summer Time"<<endl;
 		cout << "(1) 07:00 - 11:30 - Number of table: 10 Table size: 4" << endl;
 		cout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
 		cout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
 		cout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
-		cout << "(5) Exit" << endl;
+		cout << "                      Winter Time"<<endl;
+		cout << "(5) 07:00 - 11:30 - Number of table: 15 Table size: 5" << endl;
+		cout << "(6) 12:00 - 14:30 - Number of table: 20 Table size: 6" << endl;
+		cout << "(7) 15:00 - 18:00 - Number of table: 15 Table size: 5" << endl;
+		cout << "(8) 18:00 - 21:30 - Number of table: 25 Table size: 6" << endl;
+		cout << endl;
+		cout << "(9) Exit" << endl;
 		cout << "Enter the choice: ";
 		cin >> prog_choice;
 
 		switch (prog_choice) {
 		case 1: table_size = 4, num_of_table = 10;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
 			break;
 		case 2: table_size = 5, num_of_table = 20;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
 			break;
 		case 3: table_size = 4, num_of_table = 10;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
 			break;
 		case 4:  table_size = 5, num_of_table = 20;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
+			break;
+		case 5: table_size = 5, num_of_table = 15;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
+			break;
+		case 6: table_size = 6, num_of_table = 20;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
+			break;
+		case 7: table_size = 5, num_of_table = 15;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
+			break;
+		case 8: table_size = 6, num_of_table = 25;
+			cout << "The setting has been changed successfully" << endl;
+			prog_choice = 9;
 			break;
 		default:
-			cout << "Please enter choice 1 - 5 only." << endl;
+			cout << "Please enter choice 1 - 8 only." << endl;
 			break;
 		}
-	} while (prog_choice != 5);
+	} while (prog_choice != 9);
 }
 
 void Staffs_func() {
-	cout << "Name: Chan Kam Chuen\tUID: 3035558197" << endl;
-	cout << "Name: Ho Sui Ting\tUID: 3035569330" << endl;
+	cout << "Name: Chan Kam Chuen  UID: 3035558197" << endl;
+	cout << "Name: Ho Sui Ting  UID: 3035569330" << endl;
 }
 
 int main()
 {
 	int prog_choice;
 
-	for (int i = 0; i < MAX_VALUE; i++) {
+	/*for (int i = 0; i < MAX_VALUE; i++) {
 		Waiting_list[i] = (rand() % 10) + 1;
-		cout << Waiting_list[i] << " ";
-	}
+		// cout << Waiting_list[i] << " ";
+	}*/
 
 	do {
 		cout << endl;

@@ -15,6 +15,7 @@
 
 
 ### Problem setting (Reasonable assumptions):  
+We assume there is no more than 100 group of customers.
 The system will first read the order that user want to do.
 1)Start
 2)Setting

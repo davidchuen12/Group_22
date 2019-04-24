@@ -23,10 +23,17 @@ The system will first read the order that user want to do.
 4)Exit  
 After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table. Then, the system will read the action that user want to do, release or occupy a table. After reading release and the number of customers, the system will suggest the table numbers that have not been occupied yet. We assume the user should assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state", and the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats. The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers) and let the waiter release those tables. 
 
-> 07:00 - 11:30 - Number of table: 6 Table size: 4  
-> 11:30 - 14:20 - Number of table: 20 Table size: 5  
-> 14:20 - 18:00 - Number of table: 6 Table size: 4  
+> Summer Time  
+> 07:00 - 11:30 - Number of table: 10 Table size: 4  
+> 12:00 - 14:30 - Number of table: 20 Table size: 5  
+> 15:00 - 18:00 - Number of table: 10 Table size: 4  
 > 18:00 - 21:30 - Number of table: 20 Table size: 5  
+>  
+> Winter Time  
+> 07:00 - 11:30 - Number of table: 15 Table size: 5  
+> 12:00 - 14:30 - Number of table: 20 Table size: 6  
+> 15:00 - 18:00 - Number of table: 15 Table size: 5  
+> 18:00 - 21:30 - Number of table: 25 Table size: 6  
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  

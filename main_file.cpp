@@ -2,8 +2,6 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-#include <ctime>
-// #include <stdlib.h>
 using namespace std;
 
 const int MAX_VALUE = 100;
@@ -54,7 +52,7 @@ void show_table() {
 	}
 }
 
-void Waiting_lists(int &count_customer) {
+/*void Waiting_lists(int &count_customer) {
 	cout << endl;
 	fout << endl;
 
@@ -73,7 +71,7 @@ void Waiting_lists(int &count_customer) {
 	}
 	cout << endl;
 	fout << endl;
-}
+}*/
 
 void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;
@@ -130,8 +128,8 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			fout << "You have to share the table with others!" << endl;
 			fout << "Number of customer(s): ";
 
-			cout << customer << endl;
-			//cin >> customer;
+			// cout << customer << endl;
+			cin >> customer;
 			fout << customer << endl;
 
 			for (int i = 0; i < num_of_table; i++) {
@@ -312,8 +310,8 @@ void start_func() {
 			cout << "Number of customer(s): ";
 			fout << "Number of customer(s): ";
 
-			//cin >> customer;
-			cout << customer << endl;
+			cin >> customer;
+			//cout << customer << endl;
 			fout << customer << endl;
 
 			if (all_available_seat < customer) {
@@ -418,10 +416,11 @@ void start_func() {
 		fout << endl;
 
 		count_customer++;
-		// system("cls");
 		//cout << "Waiting List: " << endl;
-		Waiting_lists(count_customer);
+		//Waiting_lists(count_customer);
+		
 		cout << endl;
+		fout << endl;
 	}
 }
 
@@ -445,7 +444,26 @@ void setting_func() {
 		cout << endl;
 		cout << "(9) Exit" << endl;
 		cout << "Enter the choice: ";
+		
+		fout << endl;
+		fout << "What time is it?" << endl;
+		fout << "------------------------------------------" << endl;
+		fout << "                      Summer Time" << endl;
+		fout << "(1) 07:00 - 11:30 - Number of table: 10 Table size: 4" << endl;
+		fout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
+		fout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
+		fout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
+		fout << "                      Winter Time" << endl;
+		fout << "(5) 07:00 - 11:30 - Number of table: 15 Table size: 5" << endl;
+		fout << "(6) 12:00 - 14:30 - Number of table: 20 Table size: 6" << endl;
+		fout << "(7) 15:00 - 18:00 - Number of table: 15 Table size: 5" << endl;
+		fout << "(8) 18:00 - 21:30 - Number of table: 25 Table size: 6" << endl;
+		fout << endl;
+		fout << "(9) Exit" << endl;
+		fout << "Enter the choice: ";
+		
 		cin >> prog_choice;
+		fout << prog_choice << endl;
 
 		switch (prog_choice) {
 		case 1: table_size = 4, num_of_table = 10;
@@ -492,20 +510,20 @@ void Staffs_func() {
 int main()
 {
 	int prog_choice, num;
-	ifstream fin;
+	
+/*	ifstream fin;
 	fin.open("random_array.txt");
 	if (fin.fail()) {
 		cout << "Error! random_array.txt";
 		exit(1);
-	}
+	}*/
 
-	for (int i = 0; i < MAX_VALUE; i++) {
+/*	for (int i = 0; i < MAX_VALUE; i++) {
 		fin >> num;
 		Waiting_list[i] = num;
 	}
-	fin.close();
+	fin.close();*/
 
-	//ofstream fout;
 	fout.open("Output.txt");
 	if (fout.fail()) {
 		cout << "Error! Output.txt";

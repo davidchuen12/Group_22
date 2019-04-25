@@ -119,7 +119,7 @@ void Occupying_table(int &customer, int &all_available_seat,int &num_of_table, i
 
 	if (all_available_seat < customer) {
 		check_table();
-		Releasing_table();
+		Releasing_table(customer, table_num);
 	}
 	else if (all_available_seat >= customer) {
 		while (customer != 0) {

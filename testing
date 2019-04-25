@@ -245,23 +245,29 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 			fout << customer << endl;
 			if(all_available_seat>=customer){
 				int temp = customer;
-				cout << temp << endl;
-				while (temp > 0) {
+				while (temp != 0) {
 					for (int i = 0;i < num_of_table;i++) {
-						if (Table_Available[i] == customer) {
+						if (Table_Available[i] == customer && Table_Available[i]!=0) {
 							Table_Available[i] -= customer;
 							Table_Occupied[i] += customer;
+							cout << temp << " & " << customer << endl;
 							cout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 							fout << customer << " Customer(s) have been assigned to Table " << i + 1 << endl;
 							int j = i + 1;
 							record_table(j, customer);
 							temp = temp - customer;
+							cout << temp << " & " << customer << endl;
 							customer = temp;
+							cout << customer << endl;
 							break;
+							
 						}
 					}
-					customer--;
+					if (customer != 1) {
+						customer--;
+					}
 				}
+				return;
 			}
 			else if (all_available_seat < customer) {
 				cout << "We don't have enoguh seats." << endl;

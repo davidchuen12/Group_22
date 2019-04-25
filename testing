@@ -32,6 +32,151 @@ ofstream fout;
 	cout << endl;
 	fout << endl;
 }*/
+void show_table() {
+	cout << endl;
+	fout << endl;
+
+	cout << setw(50) << right << "***********************************************" << endl;
+	fout << setw(50) << right << "***********************************************" << endl;
+
+	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
+	fout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
+
+	cout << setw(50) << right << "***********************************************" << endl;
+	fout << setw(50) << right << "***********************************************" << endl;
+
+	cout << endl;
+	fout << endl;
+
+	cout << " +------------+------------+------------+------------+----------- +" << endl;
+	fout << " +------------+------------+------------+------------+----------- +" << endl;
+
+	for (int i = 0; i < num_of_table; i++) {
+		if ((i + 1) % 5 == 0) {
+			cout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "] |";
+			fout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "] |";
+
+			cout << endl;
+			fout << endl;
+
+			cout << " +------------+------------+------------+------------+----------- +" << endl;
+			fout << " +------------+------------+------------+------------+----------- +" << endl;
+		}
+		else {
+			cout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "]" << right;
+			fout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "]" << right;
+		}
+	}
+}
+void check_table() {//check the table occupied by earliest customers
+	cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !" << endl;
+	fout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !" << endl;
+	cout <<"Please invite them to release the table" << endl;
+	fout <<"Please invite them to release the table" << endl;
+	x++;
+	return;
+}
+void record_table(int &table_num, int &customer) {
+	Order_list1[z] = table_num;
+	Order_list2[z] = customer;
+	z++;
+	return;
+}
+void Releasing_table(int &customer, int &table_num){
+	cout << "Which table need to be released? ";
+	fout << "Which table need to be released? ";
+
+	cin >> table_num;
+	fout << table_num << endl;
+
+	cout << "How many customer(s) out? ";
+	fout << "How many customer(s) out? ";
+
+	cin >> customer;
+	fout << customer << endl;
+
+	while (customer > Table_Occupied[table_num - 1]) {
+
+		cout << "Error! Enter again. ";
+		cout << "How many customer(s) out? ";
+		fout << "Error! Enter again. ";
+		fout << "How many customer(s) out? ";
+
+		cin >> customer;
+		fout << customer << endl;
+	}
+	Table_Available[table_num - 1] += customer;
+	Table_Occupied[table_num - 1] -= customer;
+}
+
+void Occupying_table(int &customer, int &all_available_seat,int &num_of_table, int &table_num, int &count_customer, int &all_available_table, int &full_table){
+	cout << "Number of customer(s): ";
+	fout << "Number of customer(s): ";
+
+	cin >> customer;
+	//cout << customer << endl;
+	fout << customer << endl;
+
+	if (all_available_seat < customer) {
+		check_table();
+		Releasing_table();
+	}
+	else if (all_available_seat >= customer) {
+		while (customer != 0) {
+			cout << "Tables you can choose: ";
+			fout << "Tables you can choose: ";
+
+			for (int i = 0; i < num_of_table; i++) {		//this for loop searhing and showing any empty table that don't have any people yet
+				if (Table_Occupied[i] == 0) {
+					cout << i + 1 << " ";
+					fout << i + 1 << " ";
+				}
+			}
+
+			cout << endl;
+			cout << "Table(s) you would like to occupy: ";
+
+			fout << endl;
+			fout << "Table(s) you would like to occupy: ";
+
+			cin >> table_num;
+			fout << table_num << endl;
+
+			if (Table_Occupied[table_num - 1] != 0) {	
+
+				cout << " Table is occupied already " << endl;
+				cout << " Please try again" << endl;
+
+				fout << " Table is occupied already " << endl;
+				fout << " Please try again" << endl;
+
+				//break;
+			}
+
+			else {
+				if (Table_Available[table_num - 1] >= customer) {
+					record_table( table_num, customer);
+					Table_Available[table_num - 1] -= customer;
+					Table_Occupied[table_num - 1] += customer;
+					customer -= customer;
+				}
+
+				if (Table_Available[table_num - 1] < customer) {
+					record_table( table_num, customer);
+					Table_Available[table_num - 1] -= table_size;
+					Table_Occupied[table_num - 1] += table_size;
+					customer -= table_size;
+
+					show_table();
+					cout << "You have to assign tables for " << customer << " more customers" << endl;
+					fout << "You have to assign tables for " << customer << " more customers" << endl;
+				}
+			}
+		}
+	}
+}
+
+
 
 void start_func() {
 	int customer = 0, count_customer = 0;
@@ -96,7 +241,7 @@ void start_func() {
 
 		}
 		if (move == 'O') {
-			Releasing_table(customer, all_available_seat, num_of_table, table_num, count_customer, all_available_table, full_table);
+			Releasing_table(customer,table_num);
 		}
 		cout << "===========================================================================" << endl;
 		cout << endl;
@@ -111,113 +256,10 @@ void start_func() {
 		fout << endl;
 	}
 }
-void record_table(int Order_list1, int Order_list2, int &z,int &table_num, int &customer) {
-	Order_list1[z] = table_num;
-	Order_list2[z] = customer;
-	z++;
-	return;
-}
-void check_table(int Order_list1,int Order_list2,int &x) {//check the table occupied by earliest customers
-	cout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !" << endl;
-	fout << Order_list2[x] << " customer(s) in Table " << Order_list1[x] << " may occupy the table for too long !" << endl;
-	cout <<"Please invite them to release the table" << endl;
-	fout <<"Please invite them to release the table" << endl;
-	x++;
-	return;
-}
-void Occupying_table(int &customer, int &all_available_seat,int &num_of_table, int &table_num, int &count_customer, int &all_available_table, int &full_table){
-	cout << "Number of customer(s): ";
-	fout << "Number of customer(s): ";
 
-	cin >> customer;
-	//cout << customer << endl;
-	fout << customer << endl;
 
-	if (all_available_seat < customer) {
-		check_table(Order_list1,Order_list2,x);
-		Releasing_table();
-	}
-	else if (all_available_seat >= customer) {
-		while (customer != 0) {
-			cout << "Tables you can choose: ";
-			fout << "Tables you can choose: ";
 
-			for (int i = 0; i < num_of_table; i++) {		//this for loop searhing and showing any empty table that don't have any people yet
-				if (Table_Occupied[i] == 0) {
-					cout << i + 1 << " ";
-					fout << i + 1 << " ";
-				}
-			}
 
-			cout << endl;
-			cout << "Table(s) you would like to occupy: ";
-
-			fout << endl;
-			fout << "Table(s) you would like to occupy: ";
-
-			cin >> table_num;
-			fout << table_num << endl;
-
-			if (Table_Occupied[table_num - 1] != 0) {	
-
-				cout << " Table is occupied already " << endl;
-				cout << " Please try again" << endl;
-
-				fout << " Table is occupied already " << endl;
-				fout << " Please try again" << endl;
-
-				//break;
-			}
-
-			else {
-				if (Table_Available[table_num - 1] >= customer) {
-					record_table(Order_list1, Order_list2, z, table_num, customer);
-					Table_Available[table_num - 1] -= customer;
-					Table_Occupied[table_num - 1] += customer;
-					customer -= customer;
-				}
-
-				if (Table_Available[table_num - 1] < customer) {
-					record_table(Order_list1, Order_list2, z, table_num, customer);
-					Table_Available[table_num - 1] -= table_size;
-					Table_Occupied[table_num - 1] += table_size;
-					customer -= table_size;
-
-					show_table();
-					cout << "You have to assign tables for " << customer << " more customers" << endl;
-					fout << "You have to assign tables for " << customer << " more customers" << endl;
-				}
-			}
-		}
-	}
-}
-
-void Releasing_table(int &customer, int &all_available_seat, int &num_of_table, int &table_num, int &count_customer, int &all_available_table, int &full_table){
-	cout << "Which table need to be released? ";
-	fout << "Which table need to be released? ";
-
-	cin >> table_num;
-	fout << table_num << endl;
-
-	cout << "How many customer(s) out? ";
-	fout << "How many customer(s) out? ";
-
-	cin >> customer;
-	fout << customer << endl;
-
-	while (customer > Table_Occupied[table_num - 1]) {
-
-		cout << "Error! Enter again. ";
-		cout << "How many customer(s) out? ";
-		fout << "Error! Enter again. ";
-		fout << "How many customer(s) out? ";
-
-		cin >> customer;
-		fout << customer << endl;
-	}
-	Table_Available[table_num - 1] += customer;
-	Table_Occupied[table_num - 1] -= customer;
-}
 
 void Staffs_func() {
 
@@ -257,7 +299,7 @@ void setting_func() {
 		fout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
 		fout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
 		fout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
-		fout << "                  Winter Time" << endl;
+		fout << "                      Winter Time" << endl;
 		fout << "(5) 07:00 - 11:30 - Number of table: 15 Table size: 5" << endl;
 		fout << "(6) 12:00 - 14:30 - Number of table: 20 Table size: 6" << endl;
 		fout << "(7) 15:00 - 18:00 - Number of table: 15 Table size: 5" << endl;
@@ -301,42 +343,7 @@ void setting_func() {
 	} while (prog_choice != 9);
 }
 
-void show_table() {
-	cout << endl;
-	fout << endl;
 
-	cout << setw(50) << right << "***********************************************" << endl;
-	fout << setw(50) << right << "***********************************************" << endl;
-
-	cout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
-	fout << setw(10) << "* Table" << setw(20) << right << "(Available seat) " << setw(20) << right << "[Occupied seat] *" << endl;
-
-	cout << setw(50) << right << "***********************************************" << endl;
-	fout << setw(50) << right << "***********************************************" << endl;
-
-	cout << endl;
-	fout << endl;
-
-	cout << " +------------+------------+------------+------------+----------- +" << endl;
-	fout << " +------------+------------+------------+------------+----------- +" << endl;
-
-	for (int i = 0; i < num_of_table; i++) {
-		if ((i + 1) % 5 == 0) {
-			cout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "] |";
-			fout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "] |";
-
-			cout << endl;
-			fout << endl;
-
-			cout << " +------------+------------+------------+------------+----------- +" << endl;
-			fout << " +------------+------------+------------+------------+----------- +" << endl;
-		}
-		else {
-			cout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "]" << right;
-			fout << " |" << setw(3) << right << (i + 1) << " (" << Table_Available[i] << ") [" << Table_Occupied[i] << "]" << right;
-		}
-	}
-}
 
 int main()
 {

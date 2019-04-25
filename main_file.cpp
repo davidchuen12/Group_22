@@ -73,11 +73,12 @@ void show_table() {
 	fout << endl;
 }*/
 
-/*
-this function read the action that that user want to carry out,'I' or 'O' ,the number of the customers,the number of all available table
+/*this function read the action that that user want to carry out,'I' or 'O' ,the number of the customers,the number of all available table
 ,number of full table ,the number of total available seat, and be reminded that these parameter are passed to reference.
-this function will fout the output into the target file.It will automatically assign the customer to the available seat when it is in full
-*/
+this function will fout the output into the target file.It will automatically assign the customer to 
+the available seat when it is in 'all_table occupied state'(all tables are occupied by at least one person), it will notice
+them you have to share table with other and also tell the waiter we don't have enough seat when all available seats are occupied 
+or the new coming customer number is larger than our available seat. It will let the waiter release the table occupied by earlest come customer*/
 
 void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;

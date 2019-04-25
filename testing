@@ -257,7 +257,7 @@ void setting_func() {
 		fout << "(2) 12:00 - 14:30 - Number of table: 20 Table size: 5" << endl;
 		fout << "(3) 15:00 - 18:00 - Number of table: 10 Table size: 4" << endl;
 		fout << "(4) 18:00 - 21:30 - Number of table: 20 Table size: 5" << endl;
-		fout << "                      Winter Time" << endl;
+		fout << "                  Winter Time" << endl;
 		fout << "(5) 07:00 - 11:30 - Number of table: 15 Table size: 5" << endl;
 		fout << "(6) 12:00 - 14:30 - Number of table: 20 Table size: 6" << endl;
 		fout << "(7) 15:00 - 18:00 - Number of table: 15 Table size: 5" << endl;

@@ -5,16 +5,16 @@
 using namespace std;
 
 const int MAX_VALUE = 100;
-int *Order_list1 = new int[MAX_VALUE];
-int *Order_list2 = new int[MAX_VALUE];
-int *Table_Occupied = new int[MAX_VALUE];
-int *Table_Available = new int[MAX_VALUE];
-int *Waiting_list = new int[MAX_VALUE];
+int *Order_list1 = new int[MAX_VALUE];		// an array to store the table number according to the order of different group of customers
+int *Order_list2 = new int[MAX_VALUE];		// an array to store the order of different group of customers(who come earlier)
+int *Table_Occupied = new int[MAX_VALUE];	//shows how many seats are occupied
+int *Table_Available = new int[MAX_VALUE];	//shows how many seats are available
+int *Waiting_list = new int[MAX_VALUE];		//construct a waiting list to see how many people waiting for a seat and thier number
 int table_size = 5, num_of_table = 20,z=0,x=0;
 ofstream fout;
 
-// This function shows a 2D picture of our restaurant which included the number of the table,
-// the available seat of a table and the seat occupied for that table
+/* This function shows a 2D picture of our restaurant which included the number of the table,
+ the available seat of a table and the seat occupied for that table*/
 void show_table() {
 	cout << endl;
 	fout << endl;

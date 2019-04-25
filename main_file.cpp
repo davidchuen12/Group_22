@@ -51,7 +51,7 @@ void show_table() {
 		}
 	}
 }
-
+/*this function read an input of number of customer and print out a waiting list*/
 /*void Waiting_lists(int &count_customer) {
 	cout << endl;
 	fout << endl;
@@ -72,6 +72,12 @@ void show_table() {
 	cout << endl;
 	fout << endl;
 }*/
+
+/*
+this function read the action that that user want to carry out,'I' or 'O' ,the number of the customers,the number of all available table
+,number of full table ,the number of total available seat, and be reminded that these parameter are passed to reference.
+this function will fout the output into the target file.It will automatically assign the customer to the available seat when it is in full
+*/
 
 void auto_assign_table(char move, int customer, int &count_customer, int &all_available_table, int &full_table, int &all_available_seat) {
 	int table_num;

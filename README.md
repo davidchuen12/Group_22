@@ -87,3 +87,9 @@ Table | Table | Table | Table | Table
 ---
 
 > Until End
+
+## Important  
+```diff
+- You have to enter the input in each step.
+- Using command (i.e. ./main_file < sample_input1.1.txt) will make the typesetting ugly.
+```

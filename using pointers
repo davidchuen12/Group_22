@@ -20,27 +20,40 @@ struct Node
 	Node * next;
 };
 Node * head = NULL, *tail = NULL;
-
 /*void Waiting_lists(int &count_customer) {
-	cout << endl;
-	fout << endl;
+   cout << endl;
+   fout << endl;
 
-	cout << "Waiting List: " << endl;
-	fout << "Waiting List: " << endl;
+   cout << "Waiting List: " << endl;
+   fout << "Waiting List: " << endl;
 
-	for (int i = count_customer; i < MAX_VALUE; i++) {
-		if ((i + 1) % 10 == 0) {
-			cout << setw(2) << right << Waiting_list[i] << endl;
-			fout << setw(2) << right << Waiting_list[i] << endl;
-		}
-		else {
-			cout << setw(2) << right << Waiting_list[i] << " ";
-			fout << setw(2) << right << Waiting_list[i] << " ";
-		}
-	}
-	cout << endl;
-	fout << endl;
+   for (int i = count_customer; i < MAX_VALUE; i++) {
+	   if ((i + 1) % 10 == 0) {
+		   cout << setw(2) << right << Waiting_list[i] << endl;
+		   fout << setw(2) << right << Waiting_list[i] << endl;
+	   }
+	   else {
+		   cout << setw(2) << right << Waiting_list[i] << " ";
+		   fout << setw(2) << right << Waiting_list[i] << " ";
+	   }
+   }
+   cout << endl;
+   fout << endl;
 }*/
+
+void print_list(Node * head)
+{
+	Node * current = head;
+	while (current != NULL)
+	{
+		// process the current node, e.g., print the content
+		cout << current->table << " -> ";
+		current = current->next;
+	}
+	cout << "NULL\n";
+}
+
+
 void show_table() {
 	cout << endl;
 	fout << endl;
@@ -77,16 +90,16 @@ void show_table() {
 		}
 	}
 }
-Node * find_Node(Node *head, int table_num, int customer) {
+Node * find_Node(Node *&head, int table_num, int customer) {
 	Node * current = head;
 	Node * p = head;
-	if (p->table == (table_num) && p->customer_number == customer) {
+	if (p->table == table_num && p->customer_number == customer) {
 		return p;
 	}
 	else {
 		while (current != NULL) {
 			p = current->next;
-			if (p->table == (table_num) && p->customer_number == customer) {
+			if (p->table == table_num && p->customer_number == customer) {
 				return current;
 			}
 			else {
@@ -101,13 +114,14 @@ void delete_Node(Node * after) {
 		Node * p = after->next;
 		after->next = p->next;
 		delete p;
-
 	}
+	print_list(head);
 	return;
 }
 void delete_Head(Node * &head) {
 	Node * p = head;
 	head = head->next;
+	print_list(head);
 	delete p;
 }
 void check_table() {//check the table occupied by earliest customers
@@ -131,6 +145,7 @@ void record_table(int &table_num, int &customer) {
 		tail->next = p;
 		tail = p;
 	}
+	print_list(head);
 	return;
 }
 

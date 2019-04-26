@@ -80,13 +80,13 @@ void show_table() {
 Node * find_Node(Node *head, int table_num, int customer) {
 	Node * current = head;
 	Node * p = head;
-	if (p->table == (table_num-1) && p->customer_number == customer) {
+	if (p->table == (table_num) && p->customer_number == customer) {
 		return p;
 	}
 	else {
 		while (current != NULL) {
 			p = current->next;
-			if (p->table == (table_num-1) && p->customer_number == customer) {
+			if (p->table == (table_num) && p->customer_number == customer) {
 				return current;
 			}
 			else {

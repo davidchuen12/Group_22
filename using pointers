@@ -19,7 +19,7 @@ struct Node
 	int customer_number;
 	Node * next;
 };
-Node * head = NULL, * tail = NULL;
+Node * head = NULL, *tail = NULL;
 
 /*void Waiting_lists(int &count_customer) {
 	cout << endl;
@@ -77,16 +77,16 @@ void show_table() {
 		}
 	}
 }
-Node * find_Node(Node *head,int table_num,int customer) {
+Node * find_Node(Node *head, int table_num, int customer) {
 	Node * current = head;
-	Node * p = head ;
-	if (p->table == table_num && p->customer_number == customer) {
+	Node * p = head;
+	if (p->table == (table_num-1) && p->customer_number == customer) {
 		return p;
 	}
 	else {
 		while (current != NULL) {
 			p = current->next;
-			if (p->table == table_num && p->customer_number == customer) {
+			if (p->table == (table_num-1) && p->customer_number == customer) {
 				return current;
 			}
 			else {
@@ -160,11 +160,11 @@ void Releasing_table(int &customer, int &table_num) {
 	Table_Available[table_num - 1] += customer;
 	Table_Occupied[table_num - 1] -= customer;
 	Node * after;
-	after = find_Node(head,table_num, customer);
+	after = find_Node(head, table_num, customer);
 	if (after != head) {
 		delete_Node(after);
 	}
-	else if(after == head){
+	else if (after == head) {
 		delete_Head(after);
 	}
 }
@@ -237,8 +237,8 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 			else if (total = num_of_table) {
 				cout << "Tables you can choose: ";
 				fout << "Tables you can choose: ";
-				int temp = customer, j=1;
-				while (j!= 0) {
+				int temp = customer, j = 1;
+				while (j != 0) {
 					for (int i = 0; i < num_of_table; i++) {
 						if (Table_Available[i] >= temp) {
 							cout << i + 1 << " ";

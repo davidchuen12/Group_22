@@ -2,6 +2,9 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
 const int MAX_VALUE = 100;

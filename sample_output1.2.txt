@@ -1,0 +1,70 @@
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 3
+Name: Chan Kam Chuen	UID: 3035558197
+Name: Ho Sui Ting	UID: 3035569330
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 2
+
+What time is it?
+------------------------------------------
+                      Summer Time
+(1) 07:00 - 11:30 - Number of table: 10 Table size: 4
+(2) 12:00 - 14:30 - Number of table: 20 Table size: 5
+(3) 15:00 - 18:00 - Number of table: 10 Table size: 4
+(4) 18:00 - 21:30 - Number of table: 20 Table size: 5
+                      Winter Time
+(5) 07:00 - 11:30 - Number of table: 15 Table size: 5
+(6) 12:00 - 14:30 - Number of table: 20 Table size: 6
+(7) 15:00 - 18:00 - Number of table: 15 Table size: 5
+(8) 18:00 - 21:30 - Number of table: 25 Table size: 6
+
+(9) Exit
+Enter the choice: 1
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 1
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 40
+Number of occupied seat: 0
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) E
+===========================================================================
+
+
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 4
+Program terminates. Good bye!

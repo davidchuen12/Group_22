@@ -164,6 +164,12 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 	}
 	else if (all_available_seat >= customer) {
 		while (customer != 0) {
+			total = 0;
+			for (int i = 0; i < num_of_table; i++) {			//this for loop finds how many tables are occupied by at least one person
+				if (Table_Occupied[i] > 0) {
+					total += 1;
+				}
+			}
 			if (total < num_of_table) {
 				cout << "Tables you can choose: ";
 				fout << "Tables you can choose: ";
@@ -178,11 +184,17 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 			else if (total = num_of_table) {
 				cout << "Tables you can choose: ";
 				fout << "Tables you can choose: ";
-
-				for (int i = 0; i < num_of_table; i++) {
-					if (Table_Available[i] == customer) {
-						cout << i + 1 << " ";
-						fout << i + 1 << " ";
+				int temp = customer, j=1;
+				while (j!= 0) {
+					for (int i = 0; i < num_of_table; i++) {
+						if (Table_Available[i] >= temp) {
+							cout << i + 1 << " ";
+							fout << i + 1 << " ";
+							j = 0;
+						}
+					}
+					if (j != 0) {
+						temp--;
 					}
 				}
 			}
@@ -196,7 +208,7 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 
 			cin >> table_num;
 			fout << table_num << endl;
-// ==========================================================================
+			// ==========================================================================
 			if (check_all_occupied() == true) {
 				Occupying_table_Auto(table_num, customer);
 				if (customer <= 0) {
@@ -206,7 +218,7 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 					continue;
 				}
 			}
-// ===========================================================================
+			// ===========================================================================
 			if (Table_Occupied[table_num - 1] != 0) {
 
 				cout << " Table is occupied already. " << endl;
@@ -224,6 +236,7 @@ void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, 
 					Table_Available[table_num - 1] -= customer;
 					Table_Occupied[table_num - 1] += customer;
 					customer -= customer;
+					show_table();
 				}
 
 				if (Table_Available[table_num - 1] < customer) {

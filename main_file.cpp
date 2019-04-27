@@ -13,7 +13,7 @@ int *Table_Available = new int[MAX_VALUE];		//shows how many seats are available
 int table_size = 5, num_of_table = 20, total = 0;
 ofstream fout;
 
-struct Node
+struct Node						//used to construct an array storing who is the earliest come customer
 {
 	int table;
 	int customer_number;
@@ -59,7 +59,8 @@ void show_table() {
 		}
 	}
 }
-
+/*This function will read the input of table_num and customer then it search for the specific element
+in the array and return the current*/
 Node * find_Node(Node *head, int table_num, int customer) {
 	Node * current = head;
 	Node * p = head;
@@ -79,7 +80,9 @@ Node * find_Node(Node *head, int table_num, int customer) {
 		return NULL;
 	}
 }
-
+/*this function read the current and delete one element that after it, it is used for relasing 
+the table and clean out the table that released so the checktable function will not show the elements
+which has been deleted already*/
 void delete_Node(Node * after) {
 	if (head != NULL) {
 		Node * p = after->next;
@@ -88,22 +91,26 @@ void delete_Node(Node * after) {
 	}
 	return;
 }
-
+/*this function read the current and delete head if the current is head, it is used for relasing 
+the table and clean out the table that released so the checktable function will not show the elements
+which has been deleted already,head is returned which means the new head is updated*/
 Node * delete_Head(Node * &head) {
 	Node * p = head;
-	head = head->next;			//this is correct ,head still doesn't change
+	head = head->next;			
 	delete p;
 	return head;
 }
 
-void check_table() {//check the table occupied by earliest customers
+void check_table() {//check the table occupied by earliest customers and show it to remind the waiters release it
 	cout << head->customer_number << " customer(s) in Table " << head->table << " may occupy the table for too long !" << endl;
 	fout << head->customer_number << " customer(s) in Table " << head->table << " may occupy the table for too long !" << endl;
 	cout << "Please invite them to release the table" << endl;
 	fout << "Please invite them to release the table" << endl;
 	return;
 }
-
+/*this function read the table number and the customer number of a group, it is used for occupying
+the table.A pointer forward array is construct which store the order ,the table number and how many customers of that group ,
+and the tail is keep updating to the newest come customer*/
 void record_table(int table_num, int customer) {
 	Node * p = new Node;
 	p->table = table_num;
@@ -119,7 +126,7 @@ void record_table(int table_num, int customer) {
 	}
 	return;
 }
-
+/*This function read the user input which are table number and how many customer of that table are elft.*/
 void Releasing_table(int &customer, int &table_num) {
 	cout << "Which table need to be released? ";
 	fout << "Which table need to be released? ";

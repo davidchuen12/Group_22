@@ -13,8 +13,11 @@
 - [*Q6] The system should be able to notify the waiter for tables occupied for too long. *The system will notify the waiter how many customer in which table may occupy the table for too long when the restaurant is full or have not enough seats. (done)   
 - [Q7] The system should be able to assign different number of people into one table (eg. 2 people and 2 people, or 1 person and 3 people) into a four people size table if needed.  (done)
 
+---
 
 ### Problem setting (Reasonable assumptions):  
+
+---
 
 ### Functionalities and features:
 The system will first read the order that user want to do.  
@@ -70,17 +73,10 @@ The system will notify the waiter how many customers in which table may occupy t
 eg.
   3 customer in Table 1 come earliest ,then when the restaurant is full. The system will remind the waiter how many customers in which  table come earliest ,###like showing 3 customer(s) in Table 1 may occupy the table for too long ! and invite them to release the table.After releasing those customers,the second earliest will become the earliest and they are shown when the restaurant is full again next time.
     by showing 3 customer(s) in Table 1 may occupy the table for too long !
-> Summer Time  
-> 07:00 - 11:30 - Number of table: 10 Table size: 4  
-> 12:00 - 14:30 - Number of table: 20 Table size: 5  
-> 15:00 - 18:00 - Number of table: 10 Table size: 4  
-> 18:00 - 21:30 - Number of table: 20 Table size: 5  
->  
-> Winter Time  
-> 07:00 - 11:30 - Number of table: 15 Table size: 5  
-> 12:00 - 14:30 - Number of table: 20 Table size: 6  
-> 15:00 - 18:00 - Number of table: 15 Table size: 5  
-> 18:00 - 21:30 - Number of table: 25 Table size: 6  
+    
+---
+
+###input/output specifications and compilation and execution instructions
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  

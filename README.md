@@ -66,10 +66,10 @@ eg.
   * Input I to occupy a table   
   * Input O to release a table   
 
-What action? (I/O) I
-Number of customer(s): 40
-Tables you can choose: 1 2 3 4 5 6 7 8 9 10 
-Table(s) you would like to occupy: 
+> What action? (I/O) I
+> Number of customer(s): 40
+> Tables you can choose: 1 2 3 4 5 6 7 8 9 10 
+> Table(s) you would like to occupy: 
 
 We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.
 In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state", and the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats. 

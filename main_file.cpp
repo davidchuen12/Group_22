@@ -126,7 +126,9 @@ void record_table(int table_num, int customer) {
 	}
 	return;
 }
-/*This function read the user input which are table number and how many customer of that table are elft.*/
+/*This function read the user input which are table number and how many customer of that table are left.It checks for the numbe
+r of customer and table numbers that release and pass it to findNode function in order to find the current.It then pass to the delete 
+function to delete the particular element in the array which store the order of customer come.*/
 void Releasing_table(int &customer, int &table_num) {
 	cout << "Which table need to be released? ";
 	fout << "Which table need to be released? ";
@@ -164,7 +166,7 @@ void Releasing_table(int &customer, int &table_num) {
 		head = delete_Head(after);
 	}
 }
-
+/*This function check if all the table are occupied by at least one person or not and return Ture if all are occupied*/
 bool check_all_occupied() {
 	for (int i = 0; i < num_of_table; i++) {
 		if (Table_Occupied[i] != 0) {
@@ -195,7 +197,8 @@ void Occupying_table_Auto(int table_num, int &customer) {
 		fout << "You have to assign tables for " << customer << " more customers" << endl;
 	}
 }
-
+/*THis function read the input of number of customer and if all_available seat is less than the customer,it will tell the waiter to release 
+the earliest come table,else it will suggest some tables that user can choose and read the choice of user and occupy those table*/
 void Occupying_table(int &customer, int &all_available_seat, int &num_of_table, int &table_num, int &count_customer, int &all_available_table, int &full_table) {
 	cout << "Number of customer(s): ";
 	fout << "Number of customer(s): ";
@@ -413,7 +416,8 @@ void auto_assign_table(char move, int customer, int &count_customer, int &all_av
 		return;
 	}
 }
-
+/*This function read the instruction from the user which are 'O','E' or 'I',and occupying a table and pass it to occupying function if choice is
+I and release the table if it is 'O'*/
 void start_func() {
 	int customer = 0, count_customer = 0;
 	char YorN, move = ' ';
@@ -489,7 +493,7 @@ void start_func() {
 		fout << endl;
 	}
 }
-
+/*This function show the staff name and their ID*/
 void Staffs_func() {
 
 	cout << "Name: Chan Kam Chuen\tUID: 3035558197" << endl;
@@ -499,7 +503,7 @@ void Staffs_func() {
 	fout << "Name: Ho Sui Ting\tUID: 3035569330" << endl;
 	// ************************************************************
 }
-
+/*This function allow the changing of setting of table size and the number of table*/
 void setting_func() {
 	int prog_choice;
 	do {
@@ -571,7 +575,7 @@ void setting_func() {
 		}
 	} while (prog_choice != 9);
 }
-
+/*Main function that read choice from user and pass to different function after that*/
 int main()
 {
 	int prog_choice, num;

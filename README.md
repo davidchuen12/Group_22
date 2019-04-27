@@ -25,7 +25,8 @@ eg.
 Table | Table | Table | Table | Table
 --------- | ------------- | ------------- | ------------- | -------------
 1 (1) [3] | 2 (3) [1] | 3 (3) [1] | 4 (0) [4] | 5 (0) [4]
-When there is 5 more customer , they should sit in table 2 and 3 but not 1 and 2.
+
+-When there is 5 more customer , they should sit in table 2 and 3 but not 1 and 2.
 
 
 Table | Table | Table | Table | Table

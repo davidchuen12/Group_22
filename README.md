@@ -38,11 +38,17 @@ Option(2): A few choices of different table size and number of table are provide
 Option(3): It will show the only two staffs of this restaurnt and their staff ID.
 
 Option(1): After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table.
- +------------+------------+------------+------------+----------- +
- |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
- +------------+------------+------------+------------+----------- +
- |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
- +------------+------------+------------+------------+----------- +
+
+eg.
+
+Table | Table | Table | Table | Table
+--------- | ------------- | ------------- | ------------- | -------------
+1 (4) [0] | 2 (4) [0] | 3 (4) [0] | 4 (4) [0] | 5 (4) [0]
+6 (4) [0] | 7 (4) [0] | 8 (4) [0] | 9 (4) [0] | 10 (4) [0]
+11 (4) [0] | 12 (4) [0] | 13 (4) [0] | 14 (4) [0] | 15 (4) [0]
+16 (4) [0] | 17 (4) [0] | 18 (4) [0] | 19 (4) [0] | 20 (4) [0]
+
+---
 
 Then, the system will read the action that user want to do, release or occupy a table. After reading release and the number of customers, the system will suggest the table numbers that have not been occupied yet.
 

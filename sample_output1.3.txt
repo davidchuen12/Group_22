@@ -1,0 +1,994 @@
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 2
+
+What time is it?
+------------------------------------------
+                      Summer Time
+(1) 07:00 - 11:30 - Number of table: 10 Table size: 4
+(2) 12:00 - 14:30 - Number of table: 20 Table size: 5
+(3) 15:00 - 18:00 - Number of table: 10 Table size: 4
+(4) 18:00 - 21:30 - Number of table: 20 Table size: 5
+                      Winter Time
+(5) 07:00 - 11:30 - Number of table: 15 Table size: 5
+(6) 12:00 - 14:30 - Number of table: 20 Table size: 6
+(7) 15:00 - 18:00 - Number of table: 15 Table size: 5
+(8) 18:00 - 21:30 - Number of table: 25 Table size: 6
+
+(9) Exit
+Enter the choice: 1
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 1
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 40
+Number of occupied seat: 0
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 1 2 3 4 5 6 7 8 9 10 
+Table(s) you would like to occupy: 1
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 37
+Number of occupied seat: 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 2 3 4 5 6 7 8 9 10 
+Table(s) you would like to occupy: 2
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 34
+Number of occupied seat: 6
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 3 4 5 6 7 8 9 10 
+Table(s) you would like to occupy: 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 31
+Number of occupied seat: 9
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 4 5 6 7 8 9 10 
+Table(s) you would like to occupy: 4
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 28
+Number of occupied seat: 12
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 5 6 7 8 9 10 
+Table(s) you would like to occupy: 5
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 25
+Number of occupied seat: 15
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 6 7 8 9 10 
+Table(s) you would like to occupy: 6
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 22
+Number of occupied seat: 18
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 7 8 9 10 
+Table(s) you would like to occupy: 7
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 19
+Number of occupied seat: 21
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 8 9 10 
+Table(s) you would like to occupy: 8
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 16
+Number of occupied seat: 24
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 9 10 
+Table(s) you would like to occupy: 9
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 13
+Number of occupied seat: 27
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 3
+Tables you can choose: 10 
+Table(s) you would like to occupy: 10
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+===========================================================================
+
+
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (1) [3] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 10
+Number of occupied seat: 30
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+ ********* All tables in the restaurant are occupied *********
+You may need to share the table with others!
+Seats are allocated by the system automatically
+Number of customer(s): 1
+1 Customer(s) have been assigned to Table 1
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (0) [4] |  2 (1) [3] |  3 (1) [3] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 9
+Number of full table: 1
+Number of available seat: 9
+Number of occupied seat: 31
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+ ********* All tables in the restaurant are occupied *********
+You may need to share the table with others!
+Seats are allocated by the system automatically
+Number of customer(s): 2
+1 Customer(s) have been assigned to Table 2
+1 Customer(s) have been assigned to Table 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (0) [4] |  2 (0) [4] |  3 (0) [4] |  4 (1) [3] |  5 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (1) [3] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 7
+Number of full table: 3
+Number of available seat: 7
+Number of occupied seat: 33
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+ ********* All tables in the restaurant are occupied *********
+You may need to share the table with others!
+Seats are allocated by the system automatically
+Number of customer(s): 3
+1 Customer(s) have been assigned to Table 4
+1 Customer(s) have been assigned to Table 5
+1 Customer(s) have been assigned to Table 6
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (0) [4] |  2 (0) [4] |  3 (0) [4] |  4 (0) [4] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (1) [3] |  8 (1) [3] |  9 (1) [3] | 10 (1) [3] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 4
+Number of full table: 6
+Number of available seat: 4
+Number of occupied seat: 36
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+ ********* All tables in the restaurant are occupied *********
+You may need to share the table with others!
+Seats are allocated by the system automatically
+Number of customer(s): 4
+1 Customer(s) have been assigned to Table 7
+1 Customer(s) have been assigned to Table 8
+1 Customer(s) have been assigned to Table 9
+1 Customer(s) have been assigned to Table 10
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (0) [4] |  2 (0) [4] |  3 (0) [4] |  4 (0) [4] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 0
+Number of full table: 10
+Number of available seat: 0
+Number of occupied seat: 40
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 1
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (0) [4] |  3 (0) [4] |  4 (0) [4] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 1
+Number of full table: 9
+Number of available seat: 3
+Number of occupied seat: 37
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 2
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (0) [4] |  4 (0) [4] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 2
+Number of full table: 8
+Number of available seat: 6
+Number of occupied seat: 34
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 3
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (0) [4] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 3
+Number of full table: 7
+Number of available seat: 9
+Number of occupied seat: 31
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 4
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 4
+Number of full table: 6
+Number of available seat: 12
+Number of occupied seat: 28
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 5
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (0) [4] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 5
+Number of full table: 5
+Number of available seat: 15
+Number of occupied seat: 25
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 6
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (0) [4] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 6
+Number of full table: 4
+Number of available seat: 18
+Number of occupied seat: 22
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 7
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (0) [4] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 7
+Number of full table: 3
+Number of available seat: 21
+Number of occupied seat: 19
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 8
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (0) [4] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 8
+Number of full table: 2
+Number of available seat: 24
+Number of occupied seat: 16
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 9
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (0) [4] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 9
+Number of full table: 1
+Number of available seat: 27
+Number of occupied seat: 13
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 10
+How many customer(s) out? 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (3) [1] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 30
+Number of occupied seat: 10
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 1
+How many customer(s) out? 1
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 31
+Number of occupied seat: 9
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (3) [1] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 2
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 32
+Number of occupied seat: 8
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (3) [1] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 3
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 33
+Number of occupied seat: 7
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (3) [1] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 4
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 34
+Number of occupied seat: 6
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 5
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 35
+Number of occupied seat: 5
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (3) [1] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 6
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 36
+Number of occupied seat: 4
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (3) [1] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 7
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 37
+Number of occupied seat: 3
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (3) [1] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 8
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 38
+Number of occupied seat: 2
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (3) [1] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 9
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 39
+Number of occupied seat: 1
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (3) [1] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) O
+Which table need to be released? 10
+How many customer(s) out? 1
+===========================================================================
+
+
+Number of available table: 10
+Number of full table: 0
+Number of available seat: 40
+Number of occupied seat: 0
+
+   ***********************************************
+   * Table   (Available seat)    [Occupied seat] *
+   ***********************************************
+
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) E
+===========================================================================
+
+
+XYZ Restaurant -- Table management system
+------------------------------------------
+(1) Start
+(2) Setting
+(3) Staffs
+(4) Exit
+Enter the choice: 4
+Program terminates. Good bye!

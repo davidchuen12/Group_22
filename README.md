@@ -24,16 +24,17 @@ The system will first read the order that user want to do.
 4)Exit  
 Option(2): A few choices of different table size and number of table are provided. It allows the user to select and change the setting of the restaurant based on different season and time period .
 
-                      Summer Time
-(1) 07:00 - 11:30 - Number of table: 10 Table size: 4
-(2) 12:00 - 14:30 - Number of table: 20 Table size: 5
-(3) 15:00 - 18:00 - Number of table: 10 Table size: 4
-(4) 18:00 - 21:30 - Number of table: 20 Table size: 5
-                      Winter Time
-(5) 07:00 - 11:30 - Number of table: 15 Table size: 5
-(6) 12:00 - 14:30 - Number of table: 20 Table size: 6
-(7) 15:00 - 18:00 - Number of table: 15 Table size: 5
-(8) 18:00 - 21:30 - Number of table: 25 Table size: 6
+> Summer Time  
+> 07:00 - 11:30 - Number of table: 10 Table size: 4  
+> 12:00 - 14:30 - Number of table: 20 Table size: 5  
+> 15:00 - 18:00 - Number of table: 10 Table size: 4  
+> 18:00 - 21:30 - Number of table: 20 Table size: 5  
+>  
+> Winter Time  
+> 07:00 - 11:30 - Number of table: 15 Table size: 5  
+> 12:00 - 14:30 - Number of table: 20 Table size: 6  
+> 15:00 - 18:00 - Number of table: 15 Table size: 5  
+> 18:00 - 21:30 - Number of table: 25 Table size: 6  
 
 Option(3): It will show the only two staffs of this restaurnt and their staff ID.
 

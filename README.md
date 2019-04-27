@@ -17,7 +17,7 @@
 
 ### Problem setting (Reasonable assumptions):  
 
----
+
 
 ### Functionalities and features:
 The system will first read the order that user want to do.  
@@ -74,13 +74,12 @@ eg.
 
 > Table(s) you would like to occupy: 
 ---
-We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.
-In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state".As we think the staf will become very busy now and may not have time to select which table they should invite customer in,so the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats in oder to reduce the work load of our staffs.
-An notification will be given to tell the user how many customer are assigned to which table.
-The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
-eg.
-  3 customer in Table 1 come earliest ,then when the restaurant is full. The system will remind the waiter how many customers in which  table come earliest ,###like showing 3 customer(s) in Table 1 may occupy the table for too long ! and invite them to release the table.After releasing those customers,the second earliest will become the earliest and they are shown when the restaurant is full again next time.
-    by showing 3 customer(s) in Table 1 may occupy the table for too long !
+- We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.
+- In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state".As we think the staf will become very busy now and may not have time to select which table they should invite customer in,so the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats in oder to reduce the work load of our staffs.
+- An notification will be given to tell the user how many customer are assigned to which table.
+- The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
+- eg.
+-  3 customer in Table 1 come earliest ,then when the restaurant is full. The system will remind the waiter how many customers in which  table come earliest ,###like showing 3 customer(s) in Table 1 may occupy the table for too long ! and invite them to release the table.After releasing those customers,the second earliest will become the earliest and they are shown when the restaurant is full again next time.
     
 ---
 

@@ -84,7 +84,7 @@ eg.
     
 ---
 
-###input/output specifications and compilation and execution instructions
+### input/output specifications and compilation and execution instructions
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  

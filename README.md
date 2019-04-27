@@ -43,6 +43,7 @@ Option(3): It will show the only two staffs of this restaurnt and their staff ID
 eg.
 
 > Name: Chan Kam Chuen	UID: 3035558197
+>
 > Name: Ho Sui Ting	UID: 3035569330
 
 Option(1): After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table.

@@ -15,12 +15,48 @@
 
 
 ### Problem setting (Reasonable assumptions):  
+
+### Functionalities and features:
 The system will first read the order that user want to do.  
 1)Start  
 2)Setting  
 3)Staffs  
 4)Exit  
-After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table. Then, the system will read the action that user want to do, release or occupy a table. After reading release and the number of customers, the system will suggest the table numbers that have not been occupied yet. We assume the user should assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state", and the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats. The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
+Option(2): A few choices of different table size and number of table are provided. It allows the user to select and change the setting of the restaurant based on different season and time period .
+
+                      Summer Time
+(1) 07:00 - 11:30 - Number of table: 10 Table size: 4
+(2) 12:00 - 14:30 - Number of table: 20 Table size: 5
+(3) 15:00 - 18:00 - Number of table: 10 Table size: 4
+(4) 18:00 - 21:30 - Number of table: 20 Table size: 5
+                      Winter Time
+(5) 07:00 - 11:30 - Number of table: 15 Table size: 5
+(6) 12:00 - 14:30 - Number of table: 20 Table size: 6
+(7) 15:00 - 18:00 - Number of table: 15 Table size: 5
+(8) 18:00 - 21:30 - Number of table: 25 Table size: 6
+
+Option(3): It will show the only two staffs of this restaurnt and their staff ID.
+
+Option(1): After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table.
+ +------------+------------+------------+------------+----------- +
+ |  1 (4) [0] |  2 (4) [0] |  3 (4) [0] |  4 (4) [0] |  5 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+ |  6 (4) [0] |  7 (4) [0] |  8 (4) [0] |  9 (4) [0] | 10 (4) [0] |
+ +------------+------------+------------+------------+----------- +
+
+Then, the system will read the action that user want to do, release or occupy a table. After reading release and the number of customers, the system will suggest the table numbers that have not been occupied yet.
+
+eg.
+  * Input E to exit   
+  * Input I to occupy a table   
+  * Input O to release a table   
+
+What action? (I/O) I
+Number of customer(s): 40
+Tables you can choose: 1 2 3 4 5 6 7 8 9 10 
+Table(s) you would like to occupy: 
+
+We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state", and the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats. The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
 > Summer Time  
 > 07:00 - 11:30 - Number of table: 10 Table size: 4  
 > 12:00 - 14:30 - Number of table: 20 Table size: 5  
@@ -50,7 +86,7 @@ Number of occupied seat: 0
 > Show 2D image
 
 Table | Table | Table | Table | Table
------------- | ------------- | ------------- | ------------- | -------------
+--------- | ------------- | ------------- | ------------- | -------------
 1 (4) [0] | 2 (4) [0] | 3 (4) [0] | 4 (4) [0] | 5 (4) [0]
 6 (4) [0] | 7 (4) [0] | 8 (4) [0] | 9 (4) [0] | 10 (4) [0]
 11 (4) [0] | 12 (4) [0] | 13 (4) [0] | 14 (4) [0] | 15 (4) [0]

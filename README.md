@@ -17,8 +17,19 @@
 
 ### Problem setting (Reasonable assumptions):  
 
+- We assume the input of number of customer would be reasonable and it should not be larger than the total available seats in our restaurant.
+- We don't use time to record which customer may occupy the table for too long since we don't want to invite our customer out unless our restaurant don't have enough seat to let new customer in. Instead, we use a pointer list forward to store the earliest come customer and tell the waiter who is the earliest come customer when we don't have enough seat and invite that group of customer to release their table.After that,the earliest customer will change to second earliest coming one.
+- We assume the staff will be very busy when all table are ocuppied by at least one person. At that time,the system will allocate the customer automatically and it should always separate the customer for the leasts time.
+eg.
+Table | Table | Table | Table | Table
+--------- | ------------- | ------------- | ------------- | -------------
+1 (1) [3] | 2 (3) [1] | 3 (3) [1] | 4 (0) [4] | 5 (0) [4]
+When there is 5 more customer , they should sit in table 2 and 3 but not 1 and 2.
 
 
+Table | Table | Table | Table | Table
+--------- | ------------- | ------------- | ------------- | -------------
+1 (1) [3] | 2 (0) [4] | 3 (1) [3] | 4 (0) [4] | 5 (0) [4]
 ### Functionalities and features:
 The system will first read the order that user want to do.  
 1)Start  

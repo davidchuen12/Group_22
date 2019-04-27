@@ -8,7 +8,7 @@
 - [*Q2] The system would be able to output the number of table available and the number of customers inside the restaurant.   (done)
 - [*Q3] The system should be able to output a 2D image to show which of the table is occupied or available and how many seats of that table is occupied or available.  (done)
 - [*Q4] The system would be able read an input of 'release' and 'occupied' and make a new 2D plan image to show which of the table is occupied or available and the situation of the seats immediately . The system will suggestion some tables for users to choose which table they would like to sit. 
-- [Q4.5]When each table is at least occupied by 1 person,the situation will become 'all_table occupied state'  and the system will automatically assign the extra customers to each table.*The system will not assign or suggest different group of customers sit into same table until all tables is occuiped and become all_table occupied state'. (done)
+- [Q4.5] When each table is at least occupied by 1 person, the situation will become 'all_table occupied state' and the system will automatically assign the extra customers to each table. *The system will not assign or suggest different group of customers sit into same table until all tables is occuiped and become 'all_table occupied state'. (done)
 - [*Q5] The system would be able to read an input of number of a group of customer ( n ) and the table they would like to sit and asign them to that table.If the number is larger than the size of the table,the system would remind the user to asign table for (n-table_size) more customers until there is no more customer waiting for a table. (done)
 - [*Q6] The system should be able to notify the waiter for tables occupied for too long. *The system will notify the waiter how many customer in which table may occupy the table for too long when the restaurant is full or have not enough seats. (done)   
 - [Q7] The system should be able to assign different number of people into one table (eg. 2 people and 2 people, or 1 person and 3 people) into a four people size table if needed.  (done)
@@ -27,7 +27,7 @@ Table | Table | Table | Table | Table
 --------- | ------------- | ------------- | ------------- | -------------
 1 (1) [3] | 2 (3) [1] | 3 (3) [1] | 4 (0) [4] | 5 (0) [4]
 
--When there is 5 more customer , they should sit in table 2 and 3 but not 1 and 2.
+- When there is 5 more customer, they should sit in table 2 and 3 but not 1 and 2.
 - 3 customer(s) are assigned to table 2 and 2 customers are assigned to table 3.
 
 Table | Table | Table | Table | Table
@@ -39,7 +39,7 @@ The system will first read the order that user want to do.
 2)Setting  
 3)Staffs  
 4)Exit  
-Option(2): A few choices of different table size and number of table are provided. It allows the user to select and change the setting of the restaurant based on different season and time period .
+Option(2): A few choices of different table size and number of table are provided. It allows the user to select and change the setting of the restaurant based on different season and time period.
 
 > Summer Time  
 > 07:00 - 11:30 - Number of table: 10 Table size: 4  
@@ -53,14 +53,14 @@ Option(2): A few choices of different table size and number of table are provide
 > 15:00 - 18:00 - Number of table: 15 Table size: 5  
 > 18:00 - 21:30 - Number of table: 25 Table size: 6  
 
-Option(3): It will show the only two staffs of this restaurnt and their staff ID.
+Option(3): It will show the only two staffs of this restaurnt and their staff ID.  
 eg.
 
-> Name: Chan Kam Chuen	UID: 3035558197
+> Name: Chan Kam Chuen	UID: 3035558197  
 >
-> Name: Ho Sui Ting	UID: 3035569330
+> Name: Ho Sui Ting	UID: 3035569330  
 
-Option(1): After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table.
+Option(1): After selecting (1), a 2D image of our restaurant which included table number, available seats of that table and occupied seats of that table.  
 
 eg.
 
@@ -90,11 +90,11 @@ eg.
 ---
 - We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.
 - In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. 
-- After all tables are occupied by at least 1 person, the situation will become "all_table occupied state".As we think the staf will become very busy now and may not have time to select which table they should invite customer in,so the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats in oder to reduce the work load of our staffs.
+- After all tables are occupied by at least 1 person, the situation will become "all_table occupied state". As we think the staf will become very busy now and may not have time to select which table they should invite customer in, so the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats in oder to reduce the work load of our staffs.
 - An notification will be given to tell the user how many customer are assigned to which table.
-- The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
+- The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers, the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant and let the waiter release those tables. 
 
--  eg. 3 customer in Table 1 come earliest ,then when the restaurant is full. The system will remind the waiter how many customers in which  table come earliest ,###like showing 3 customer(s) in Table 1 may occupy the table for too long ! and invite them to release the table.After releasing those customers,the second earliest will become the earliest and they are shown when the restaurant is full again next time.
+-  eg. 3 customer in Table 1 come earliest, then when the restaurant is full. The system will remind the waiter how many customers in which  table come earliest, ###like showing 3 customer(s) in Table 1 may occupy the table for too long ! and invite them to release the table. After releasing those customers, the second earliest will become the earliest and they are shown when the restaurant is full again next time.
     
 ---
 

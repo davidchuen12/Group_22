@@ -75,7 +75,7 @@ eg.
 > Table(s) you would like to occupy: 
 ---
 We want the user assign the customer to the tables that have not been occupied yet since it is not "all_table occupied state" yet.
-In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state", and the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats. 
+In this case, all tables are available. If the number of customer is larger than the table size, the system will suggest other table to let the user asign for the rest of the customers. After all tables are occupied by at least 1 person, the situation will become "all_table occupied state".As we think the staf will become very busy now and may not have time to select which table they should invite customer in,so the system will automatically assign different number of customers into different table until the restaurant is full or without enough seats in oder to reduce the work load of our staffs.
 An notification will be given to tell the user how many customer are assigned to which table.
 The system will notify the waiter how many customers in which table may occupy the table for too long (since they come earlier than other customers ,the notice is not according to a specific period of time(like 2 hour), since it is fine for the customer to stay for a longer time unless the restaurant is full when we are running a restaurant)  and let the waiter release those tables. 
 eg.
@@ -84,7 +84,7 @@ eg.
     
 ---
 
-### input/output specifications and compilation and execution instructions
+### Input/output specifications & compilation and execution instructions
 
 Assume the number of table is 20 and the table size is 4:  
 A 2D image should be shown like below:  
